@@ -30,7 +30,7 @@ https://docs.google.com/document/d/1BKqD1_fzYtYqDIhV8YrzngFnDJbPqDJxajjmP7TuZwg/
 https://drive.google.com/file/d/1lGH7l5Oh6PWuirqa19-cKN6UnbAfppl-/view?usp=sharing
 https://docs.google.com/spreadsheets/d/1RKPmAWuo09VjIAifspCYi6h34bgQYOxv2-tQ-fnN8a8/edit?usp=sharing
 
-## 画面遷移図
+## 画面遷移図/ワイヤーフレーム
 https://docs.google.com/spreadsheets/d/1SOSWPg8iMqqujQIkZ_007D4UyvczAJCpgqrNDWN-UNA/edit?usp=sharing
 
 ## 使用予定Gem
