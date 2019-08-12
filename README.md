@@ -24,9 +24,11 @@ Rails 5.2.3
   - [ ] ５項目による評価、文章による評価
   
 ## カリキュラム内外の技術要素について
-- [ ] トレーナー評価機能
-  - [ ] ５項目による評価、文章による評価
-- [ ] AWS(EC2)を使ったデプロイ
+- [ ] AWS(EC2)を使ったデプロイ（就業term)
+- [ ] deviseを使用したログイン機能（就業term)
+- [ ] トレーナー評価機能(就業term外)
+  - [ ] ５項目による評価
+  - [ ] 文章による評価
  
 ## カタログ設計
 https://docs.google.com/document/d/1BKqD1_fzYtYqDIhV8YrzngFnDJbPqDJxajjmP7TuZwg/edit?usp=sharing
