@@ -22,6 +22,11 @@ Rails 5.2.3
 - [ ] 管理者権限
 - [ ] トレーナー評価機能
   - [ ] ５項目による評価、文章による評価
+  
+## カリキュラム内外の技術要素について
+- [ ] トレーナー評価機能
+  - [ ] ５項目による評価、文章による評価
+- [ ] AWS(EC2)を使ったデプロイ
  
 ## カタログ設計
 https://docs.google.com/document/d/1BKqD1_fzYtYqDIhV8YrzngFnDJbPqDJxajjmP7TuZwg/edit?usp=sharing
