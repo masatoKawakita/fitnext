@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
-    users_show_path
+    user_show_path
   end
 
 private
