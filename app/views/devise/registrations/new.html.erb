@@ -4,8 +4,48 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.text_field :birthday, autofocus: true, autocomplete: "birthday" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sex %><br />
+    <%= f.text_field :sex, autofocus: true, autocomplete: "sex" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tel %><br />
+    <%= f.text_field :tel, autofocus: true, autocomplete: "tel" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :picture %><br />
+    <%= f.text_field :picture, autofocus: true, autocomplete: "picture" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :infomation %><br />
+    <%= f.text_field :infomation, autofocus: true, autocomplete: "infomation" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :skype %><br />
+    <%= f.text_field :skype, autofocus: true, autocomplete: "skype" %>
   </div>
 
   <div class="field">
