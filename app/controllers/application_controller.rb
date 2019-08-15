@@ -6,6 +6,17 @@ class ApplicationController < ActionController::Base
     edit_user_registration_path
   end
 
+  # def after_sign_in_path_for(resource)
+  #   flash[:notice] = "ログインしました"
+  #   # user_path(current_user.id)
+  #
+  # end
+
+  # def after_sign_out_path_for(resource)
+  #   flash[:alert] = "ログアウトしました"
+  #   redirect_to homes_path
+  # end
+
 private
   def sign_in_required
     redirect_to homes_path unless user_signed_in?
