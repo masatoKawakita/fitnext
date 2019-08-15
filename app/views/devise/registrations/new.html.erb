@@ -10,7 +10,7 @@
 
   <div class="field">
     <%= f.label :＊生年月日 %><br />
-    <%= f.text_field :birthday, autofocus: true, autocomplete: "birthday" ,placeholder: '1990-01-01'%>
+    <%= f.date_field :birthday, autofocus: true, autocomplete: "birthday" ,placeholder: '1990-01-01'%>
   </div>
 
   <div class="field">
@@ -30,12 +30,12 @@
 
   <div class="field">
     <%= f.label :＊電話番号（ハイフン有り） %><br />
-    <%= f.text_field :tel, autofocus: true, autocomplete: "tel" %>
+    <%= f.telephone_field :tel, autofocus: true, autocomplete: "tel" %>
   </div>
 
   <div class="field">
     <%= f.label :顔写真 %><br />
-    <%= f.text_field :picture, autofocus: true, autocomplete: "picture" %>
+    <%= f.file_field :picture, autofocus: true, autocomplete: "picture" %>
   </div>
 
   <div class="field">
@@ -45,7 +45,7 @@
 
   <div class="field">
     <%= f.label :自己紹介 %><br />
-    <%= f.text_field :infomation, autofocus: true, autocomplete: "infomation" %>
+    <%= f.text_area :infomation, autofocus: true, autocomplete: "infomation" %>
   </div>
 
     <div class="field">

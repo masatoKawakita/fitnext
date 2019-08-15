@@ -7,5 +7,7 @@ class UsersController < ApplicationController
   def create
   end
 
+  def update #TODO:アップデートしたら、編集画面へ
+  end
 
 end
