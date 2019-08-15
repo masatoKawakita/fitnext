@@ -10,12 +10,17 @@
 
   <div class="field">
     <%= f.label :＊生年月日 %><br />
-    <%= f.text_field :birthday, autofocus: true, autocomplete: "birthday" %>
+    <%= f.text_field :birthday, autofocus: true, autocomplete: "birthday" ,placeholder: '1990-01-01'%>
   </div>
 
   <div class="field">
     <%= f.label :＊性別 %><br />
-    <%= f.text_field :sex, autofocus: true, autocomplete: "sex" %>
+    <%= f.label :男 %>
+    <%= f.radio_button :sex, :男 %>
+    <%= f.label :女 %>
+    <%= f.radio_button :sex, :女 %>
+    <%= f.label :その他 %>
+    <%= f.radio_button :sex, :その他 %>
   </div>
 
   <div class="field">
