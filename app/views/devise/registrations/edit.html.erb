@@ -13,9 +13,8 @@
     <%= f.telephone_field :tel, autofocus: true, autocomplete: "tel" %>
   </div>
 
-  <div class="field">
+  <div class="picture_field">
     <%= f.label :顔写真 %><br />
-    <%= f.file_field :picture, autofocus: true, autocomplete: "picture" %>
     <% if current_user.persisted? && current_user.picture? %>
       <%= image_tag current_user.picture.to_s %>
       <label><%= f.check_box :remove_picture %> 画像を削除</label>
