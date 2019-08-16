@@ -6,4 +6,5 @@ class User < ApplicationRecord
   enum sex: { 男: 1, 女: 2, その他: 3}
   validates :name, :birthday, :sex, :tel, presence: true
   validates :email, uniqueness: true
+  mount_uploader :picture, PictureUploader
 end

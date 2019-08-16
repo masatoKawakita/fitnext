@@ -59,4 +59,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  protected
+
+  def configure_account_update_params #:picture_cache画像を保持する :remove_picture画像を削除する パラメーター
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :birthday, :sex, :email, :tel, :picture, :address,
+                                      :infomation, :skype, :encrypted_password, :picture_cache, :remove_picture])
+  end
 end
