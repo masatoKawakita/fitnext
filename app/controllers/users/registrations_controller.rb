@@ -45,12 +45,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                       :infomation, :skype, :encrypted_password, :picture_cache, :remove_picture])
   end
 
+  # アカウント編集後、プロフィール画面に移動する
+  def after_update_path_for(resource)
+    user_path(id: current_user.id)
+  end
+
+
   # def after_update_path_for(resource)
   #   user_path(id: current_user.id)
   # end
 
   # def after_update_path_for(resource)
   #   user_path(current_user)
+  # end
+
+  # def after_update_path_for(resource)
+  #   user_path(resource)
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
