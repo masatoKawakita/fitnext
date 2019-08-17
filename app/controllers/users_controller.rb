@@ -1,13 +1,19 @@
 class UsersController < ApplicationController
-  before_action :sign_in_required, only: [:show]
 
-  def new
+  def show
+    @user = User.find(params[:id])
+    if current_user != @user
+      redirect_to homes_show_path,  alert: 'URLが正しくありません。'
+    end
   end
 
-  def create
+  def update
+    if @user.id == current_user.id
+      if @user.update(user_params)
+        redirect_to user_path(@user.id), success: "情報を更新しました"
+      else
+        render "new", danger: "更新に失敗しました"
+      end
+    end
   end
-
-  def update #TODO:アップデートしたら、編集画面へ
-  end
-
 end

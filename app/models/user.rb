@@ -4,4 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum sex: { 男: 1, 女: 2, その他: 3}
+  validates :name, presence: true, length: { maximum: 100 }
+  validates :birthday, :sex, :tel, presence: true
+  validates :email, uniqueness: true,  presence: true, length: { maximum: 200 },
+            format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+  mount_uploader :picture, PictureUploader
 end
