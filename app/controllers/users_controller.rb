@@ -7,4 +7,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    if @user.id == current_user.id
+      if @user.update(user_params)
+        redirect_to user_path(@user.id), success: "情報を更新しました"
+      else
+        render "new", danger: "更新に失敗しました"
+      end
+    end
+  end
 end
