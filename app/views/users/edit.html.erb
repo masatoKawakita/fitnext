@@ -41,25 +41,12 @@
     <%= f.text_field :skype, autofocus: true, autocomplete: "skype" %>
   </div>
 
-  <div class="field">
-    <%= f.label :パスワード %> <i>(変更しない場合は、記入しないでください。)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %>文字以上</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :パスワード（確認用） %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
   <div class="actions">
     <%= f.submit "更新する" %>
   </div>
 <% end %>
 
-<h3>アカウントを削除する</h3>
+<%= link_to 'パスワードを編集する', edit_user_registration_path %>
 
+<h3>アカウントを削除する</h3>
 <p><%= button_to "アカウントを削除", data: { confirm: "本当に削除しますか?" }, method: :delete %>

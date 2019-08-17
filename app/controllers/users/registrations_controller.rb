@@ -40,11 +40,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-
   def configure_account_update_params #:picture_cache画像を保持する :remove_picture画像を削除する パラメーター
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :birthday, :sex, :email, :tel, :picture, :address,
                                       :infomation, :skype, :encrypted_password, :picture_cache, :remove_picture])
   end
+
+  # def after_update_path_for(resource)
+  #   user_path(id: current_user.id)
+  # end
+
+  # def after_update_path_for(resource)
+  #   user_path(current_user)
+  # end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
