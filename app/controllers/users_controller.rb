@@ -4,10 +4,6 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 
   def show
-    # @user = User.find(params[:id])
-    # unless current_user == @user
-    #   redirect_to homes_show_path,  alert: 'URLが正しくありません。'
-    # end
   end
 
   def edit
@@ -35,8 +31,8 @@ private
 
   def set_user
     @user = User.find(params[:id])
-    unless @user == current_user.id
-    render homes_show_path,  alert: '違反行為です! 他のユーザーページにはいけません。'
+    if current_user != @user
+        redirect_to root_path,  alert: '違反行為です! 他のユーザーページにはいけません。'
     end
   end
 end
