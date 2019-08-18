@@ -4,9 +4,10 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 
   def show
-    if current_user != @user
-      redirect_to homes_show_path,  alert: 'URLが正しくありません。'
-    end
+    # @user = User.find(params[:id])
+    # unless current_user == @user
+    #   redirect_to homes_show_path,  alert: 'URLが正しくありません。'
+    # end
   end
 
   def edit
@@ -15,7 +16,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   def update
     if @user.id == current_user.id
       if @user.update(user_params)
-        redirect_to user_path(@user.id), notice: "情報を更新しました"
+        redirect_to user_path(current_user.id), notice: "情報を更新しました"
       else
         render "new", alert: "更新に失敗しました"
       end
@@ -34,8 +35,8 @@ private
 
   def set_user
     @user = User.find(params[:id])
-    if current_user != @user
-        redirect_to user_path,  alert: '違反行為です! 他のユーザーページにはいけません。'
+    unless @user == current_user.id
+    render homes_show_path,  alert: '違反行為です! 他のユーザーページにはいけません。'
     end
   end
 end
