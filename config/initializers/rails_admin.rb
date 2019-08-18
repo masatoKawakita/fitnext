@@ -1,7 +1,8 @@
 RailsAdmin.config do |config|
 
   ### Popular gems integration
-
+  require 'i18n'
+  I18n.default_locale = :ja
   ## == Devise ==
   config.authenticate_with do
     warden.authenticate! scope: :user
