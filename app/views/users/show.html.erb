@@ -43,3 +43,8 @@
     </div>
   </body>
 
+  <% if current_user.try(:admin?) && ! (current_user.id == @user) %>
+    <h1>管理者ページ<h3>
+    <%= link_to '管理者ページ', "/admin" %>
+  <% end %>
+
