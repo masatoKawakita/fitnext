@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_locale
 
   def after_sign_in_path_for(resource)
     flash[:notice] = "ログインしました"
@@ -12,6 +13,10 @@ class ApplicationController < ActionController::Base
   #   flash[:alert] = "ログアウトしました"
   #   redirect_to homes_path
   # end
+
+def set_locale
+    I18n.locale = I18n.default_locale
+end
 
 private
   def sign_in_required

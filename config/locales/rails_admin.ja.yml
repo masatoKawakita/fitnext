@@ -1,0 +1,95 @@
+ja:
+  admin:
+    home:
+      name: "Home"
+    dashboard:
+      pagename: "サイト管理"
+      name: "ダッシュボード"
+      model_name: "Model名"
+      last_used: "最終アクセス日時"
+      records: "レコード"
+      modify: "変更"
+      add_new: "新規作成"
+      show: "詳細"
+      ago: "前"
+    history:
+      name: "履歴"
+      page_name: "%{name}の履歴"
+      no_activity: "該当なし"
+    credentials:
+      log_out: "Log out"
+    list:
+      edit_action: "編集"
+      delete_action: "削除"
+      select_action: "選択"
+      export_action: "エクスポート"
+      export_selected: "選択をエクスポート"
+      delete_selected: "選択を削除"
+      add_new: "新規作成"
+      search: "検索"
+      select: "編集する%{name}を選択"
+      show_all: "全て表示"
+      add_filter: "絞り込み"
+    new:
+      basic_info: "基本情報"
+      required: "必須"
+      optional: "任意"
+      one_char: "文字."
+      many_chars: "文字以下"
+      chosen: "選択された%{name}"
+      select_choice: "クリックで選択"
+      chose_all: "全て選択"
+      clear_all: "選択をクリア"
+      up: "Up"
+      down: "Down"
+      save: "保存"
+      save_and_add_another: "保存して次を作成"
+      save_and_edit: "保存して編集を続ける"
+      cancel: "Cancel"
+    delete:
+      all_of_the_following_related_items_will_be_deleted: "以下の関連項目が全て削除されます："
+      are_you_sure_you_want_to_delete_the_object: "%{model_name}を削除してよろしいですか？"
+      confirmation: "削除する"
+      delete_confirmation: "削除の確認"
+    export:
+      confirmation: "%{name}としてエクスポート"
+      select: "エクスポートするフィールドを選択してください"
+      fields_from: "%{name}のフィールド"
+      fields_from_associated: "関連する%{name}のフィールド"
+      display: "カラム:%{name} 型:%{type}"
+      options_for: "%{name}の出力オプション"
+      empty_value_for_associated_objects: "<empty>"
+      click_to_reverse_selection: 'クリックで選択を反転します'
+      csv:
+        header_for_root_methods: "%{name}" # 'model' is available
+        header_for_association_methods: "%{name} [%{association}]"
+        encoding_to: "文字コード"
+        encoding_to_help: "空白の場合は%{name}になります"
+        skip_header: "ヘッダなし"
+        skip_header_help: "チェックすると出力にヘッダ行を含めません"
+        default_col_sep: ","
+        col_sep: "区切り文字"
+        col_sep_help: "空白の場合は'%{value}'区切りです" # value is default_col_sep
+    flash:
+      successful: "%{name}を%{action}しました。"
+      error: "%{name}は%{action}できませんでした。"
+      noaction: "変更はありません。"
+    actions:
+      dashboard:
+        title: "ダッシュボード"
+        menu: "メニュー"
+        breadcrumb: "詳細"
+      index:
+        title: "ダッシュボード"
+        menu: "index menu"
+      create: "作成"
+      created: "作成"
+      update: "更新"
+      updated: "更新"
+      delete: "削除"
+      deleted: "削除"
+      export:
+        menu: "エクスポート"
+      new:
+        menu: "新規作成"
+      exported: "エクスポート"
