@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+
+
   def show
     if current_user != @user
       redirect_to homes_show_path,  alert: 'URLが正しくありません。'
