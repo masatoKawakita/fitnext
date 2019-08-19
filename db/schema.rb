@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 2019_08_19_020259) do
   end
 
   create_table "trainers", force: :cascade do |t|
-    t.string "license", null: false
-    t.string "experience", null: false
-    t.string "belongs", null: false
+    t.string "license", default: "", null: false
+    t.string "experience", default: "", null: false
+    t.string "belongs", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

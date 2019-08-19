@@ -9,4 +9,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true,  presence: true, length: { maximum: 200 },
             format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   mount_uploader :picture, PictureUploader
+
+  has_one :trainer
+  accepts_nested_attributes_for :trainer
 end
