@@ -1,8 +1,6 @@
 <h1>プロフィール編集画面</h1>
-<%# <%= form_with(model: @trainer,url: user_path(trainers_id: @trainer),local: true) do |f| %>
-  #TODO user_id 付いている場合に出現 #TODO トレーナー登録ボタンを押したら、以下のフォームが追加で出現
 
-  <%= form_with(model: @user,url: user_path(users_id: @user),local: true) do |f| %>
+  <%= form_with(model: @trainer,url: user_path(users_id: @trainer),local: true) do |f| %>
 
   <div class="field">
     <%= f.label :氏名 %><br />
@@ -42,10 +40,10 @@
     <%= f.label :スカイプ名 %><br />
     <%= f.text_field :skype, autofocus: true, autocomplete: "skype" %>
   </div>
-<% end %>
 
-  <%# <%= form_with(model: Trainer.new,url: user_path(user_id: @trainer),local: true) do |f| %>
-  #TODO user_id 付いている場合に出現 #TODO トレーナー登録ボタンを押したら、以下のフォームが追加で出現
+  <div class="actions">
+    <%= f.submit "更新する" %>
+  </div>
 
   <div class="field">
     <%= f.label :資格 %><br />
@@ -60,8 +58,7 @@
   <div class="field">
     <%= f.label :所属先（所属がない場合は、「なし」と記入してください。） %><br />
     <%= f.text_field :belongs, autofocus: true, autocomplete: "belongs" %>
-  </div> %>
-
+  </div>
 
   <div class="actions">
     <%= f.submit "更新する" %>
@@ -72,5 +69,3 @@
 
 <h3>アカウントを削除する</h3>
 <p><%= button_to "アカウントを削除", data: { confirm: "本当に削除しますか?" }, method: :delete %></p>
-
-

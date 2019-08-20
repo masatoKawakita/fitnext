@@ -10,6 +10,6 @@ class User < ApplicationRecord
             format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   mount_uploader :picture, PictureUploader
 
-  has_one :trainer
+  has_one :trainer, inverse_of: :user
   accepts_nested_attributes_for :trainer
 end

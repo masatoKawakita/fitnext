@@ -11,8 +11,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   # def create
+  #   # if params[:trainer] == true
+  #   #   Trainer.create()
+  #   # end
   #   super
   # end
+
+    # トレーナー登録フォーム
+  def trainer
+    @user = User.new
+    @user.build_trainer
+  end
+
+  def create
+    super
+    user = User.new(configure_sign_up_params)
+    user.save
+  end
 
   # GET /resource/edit
   # def edit
