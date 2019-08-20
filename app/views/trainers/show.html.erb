@@ -2,8 +2,6 @@
 
   <%= link_to 'プロフィールを編集する', edit_user_path %>
 
-  <%# <%= render '' %> %>
-
   <body>
     <div>
       <span>氏名: <%= @user.name %></span>
@@ -44,23 +42,15 @@
       <span>Skype名: <%= @user.skype %></span>
     </div>
 
-  <% if @trainer.user_id %> #TODO:usd_idをもつユーザーのみ表示できる %>
-  <%# <% @trainer do |item| %>
     <div>
-      <span>資格：<%= @trainer.license %></span>
+      <span>資格：<%= @user.license %></span>
     </div>
 
     <div>
-      <span>経験年数：<%= item.experience %></span>
+      <span>経験年数：<%= @user.experience %></span>
     </div>
 
     <div>
-      <span>所属先：<%= item.belongs %></span>
+      <span>所属先：<%= @user.belongs %></span>
     </div>
-  <% end %>
-
-  <% if current_user.try(:admin?) && ! (current_user.id == @user) %>
-    <h1>管理者ページ<h3>
-    <%= link_to '管理者ページ', "/admin" %>
-  <% end %>
-</body>
+  </body>

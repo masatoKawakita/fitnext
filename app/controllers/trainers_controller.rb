@@ -1,4 +1,4 @@
-class TrainersController < ApplicationController #TODO
+class TrainersController < ApplicationController
   before_action :set_trainer, only: [:show, :edit, :update, :destroy]
 
   def new

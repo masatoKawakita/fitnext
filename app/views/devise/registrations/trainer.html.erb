@@ -3,8 +3,6 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-<%# <%= form_for([resource, resource.with_trainer], :as => new_trainer, :url => registration_path(new_trainer)) do |f| %>
-  <%# <%= devise_error_messages! %>
   <strong><%= f.label :＊の項目は必ず記入してください。%></strong><br />
 
   <div class="field">
@@ -59,17 +57,17 @@
 
   <%= f.fields_for :trainer do |f| %>
   <div class="field">
-    <%= f.label :資格 %><br />
+    <%= f.label :＊資格 %><br />
     <%= f.text_field :license, autofocus: true, autocomplete: "license" %>
   </div>
 
   <div class="field">
-    <%= f.label :経験年数 %><br />
+    <%= f.label :＊経験年数 %><br />
     <%= f.text_field :experience, autofocus: true, autocomplete: "experience" %>年
   </div>
 
   <div class="field">
-    <%= f.label :所属先（所属がない場合は、「なし」と記入してください。） %><br />
+    <%= f.label :＊所属先（所属がない場合は、「なし」と記入してください。） %><br />
     <%= f.text_field :belongs, autofocus: true, autocomplete: "belongs" %>
   </div>
   <% end %>

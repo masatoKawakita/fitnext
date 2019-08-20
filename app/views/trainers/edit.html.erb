@@ -41,29 +41,26 @@
     <%= f.text_field :skype, autofocus: true, autocomplete: "skype" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "更新する" %>
-  </div>
-
+  <%= f.fields_for :trainer do |f| %>
   <div class="field">
-    <%= f.label :資格 %><br />
+    <%= f.label :＊資格 %><br />
     <%= f.text_field :license, autofocus: true, autocomplete: "license" %>
   </div>
 
   <div class="field">
-    <%= f.label :経験年数 %><br />
-    <%= f.text_field :experience, autofocus: true, autocomplete: "experience" %>
+    <%= f.label :＊経験年数 %><br />
+    <%= f.text_field :experience, autofocus: true, autocomplete: "experience" %>年
   </div>
 
   <div class="field">
-    <%= f.label :所属先（所属がない場合は、「なし」と記入してください。） %><br />
+    <%= f.label :＊所属先（所属がない場合は、「なし」と記入してください。） %><br />
     <%= f.text_field :belongs, autofocus: true, autocomplete: "belongs" %>
   </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit "更新する" %>
   </div>
-<% end %>
 
 <%= link_to 'パスワードを編集する', edit_user_registration_path %>
 
