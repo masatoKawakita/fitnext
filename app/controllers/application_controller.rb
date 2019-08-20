@@ -25,10 +25,10 @@ private
 
 protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :birthday, :sex, :tel, :picture, :address, :infomation, :skype, :trainer_id,
-                                      trainer_attributes:[ :license, :experience,  :belongs]])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :birthday, :sex, :tel, :picture, :address, :infomation, :skype, :user_id,
+                                      trainer_attributes:[ :license, :experience, :belongs]])
 
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :birthday, :sex, :tel, :picture, :address, :infomation, :skype, :trainer_id,
-                                      trainer_attributes:[ :license, :experience,  :belongs]])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :birthday, :sex, :tel, :picture, :address, :infomation, :skype, :user_id,
+                                      trainer_attributes:[ :license, :experience, :belongs]])
   end
 end

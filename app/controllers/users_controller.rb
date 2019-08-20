@@ -28,8 +28,7 @@ private
   def user_params
     params.require(:user).permit(:name, :birthday, :sex, :email, :tel, :picture, :address,
                                   :infomation, :skype, :encrypted_password, :picture_cache,
-                                  :remove_picture, :license, :experience, :belongs
-                                ) #TODO:ユーザーとトレーナを分ける
+                                  :remove_picture)
   end
 
   def set_user

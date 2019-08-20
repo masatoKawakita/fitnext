@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_08_19_020259) do
     t.string "license", default: "", null: false
     t.string "experience", default: "", null: false
     t.string "belongs", default: "", null: false
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,7 +66,6 @@ ActiveRecord::Schema.define(version: 2019_08_19_020259) do
     t.boolean "admin", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "trainer_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

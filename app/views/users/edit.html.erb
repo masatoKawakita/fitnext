@@ -44,29 +44,6 @@
   </div>
 <% end %>
 
-  <%# <%= form_with(model: Trainer.new,url: user_path(user_id: @trainer),local: true) do |f| %>
-  #TODO user_id 付いている場合に出現 #TODO トレーナー登録ボタンを押したら、以下のフォームが追加で出現
-
-  <div class="field">
-    <%= f.label :資格 %><br />
-    <%= f.text_field :license, autofocus: true, autocomplete: "license" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :経験年数 %><br />
-    <%= f.text_field :experience, autofocus: true, autocomplete: "experience" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :所属先（所属がない場合は、「なし」と記入してください。） %><br />
-    <%= f.text_field :belongs, autofocus: true, autocomplete: "belongs" %>
-  </div> %>
-
-
-  <div class="actions">
-    <%= f.submit "更新する" %>
-  </div>
-<% end %>
 
 <%= link_to 'パスワードを編集する', edit_user_registration_path %>
 

@@ -20,12 +20,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # トレーナー登録フォーム
   def trainer
     @user = User.new
-    @user.build_trainer
+    # @user.build_trainer
+    @trainer = @user.build_trainer
   end
 
   def create
     super
-    user = User.new(configure_sign_up_params)
+    user = User.new(configure_account_update_params)
     user.save
   end
 
@@ -57,7 +58,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def configure_account_update_params #:picture_cache画像を保持する :remove_picture画像を削除する パラメーター
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :birthday, :sex, :email, :tel, :picture, :address,
-                                      :infomation, :skype, :encrypted_password, :picture_cache, :remove_picture])
+                                      :infomation, :skype, :encrypted_password, :picture_cache, :remove_picture,
+                                      trainer_attributes:[ :license, :experience, :belongs]])
   end
 
   # アカウント編集後、プロフィール画面に移動する
