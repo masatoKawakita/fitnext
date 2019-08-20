@@ -7,6 +7,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   end
 
   def edit
+    # @trainer = Trainer.new
   end
 
   def update
@@ -26,7 +27,8 @@ private
 
   def user_params
     params.require(:user).permit(:name, :birthday, :sex, :email, :tel, :picture, :address,
-                                  :infomation, :skype, :encrypted_password, :picture_cache, :remove_picture)
+                                  :infomation, :skype, :encrypted_password, :picture_cache,
+                                  :remove_picture)
   end
 
   def set_user

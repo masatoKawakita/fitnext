@@ -25,22 +25,10 @@ private
 
 protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:birthday])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:sex])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:tel])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:picture])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:address])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:infomation])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:skype])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :birthday, :sex, :tel, :picture, :address, :infomation, :skype, :user_id,
+                                      trainer_attributes:[ :license, :experience, :belongs]])
 
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:birthday])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:sex])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:tel])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:picture])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:address])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:infomation])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:skype])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :birthday, :sex, :tel, :picture, :address, :infomation, :skype, :user_id,
+                                      trainer_attributes:[ :license, :experience, :belongs]])
   end
 end
