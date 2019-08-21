@@ -1,14 +1,18 @@
 <h1>トレーナー一覧</h1>
 
- 
+
 <% @user.each do |user| %>
-
-  <% unless user.trainer.blank? %>
+<% unless user.trainer.blank? %>
   <ul>
-    <li>タイトル：<% user.name %></li>
-
-    <% else %>
-    <li>タイトル：<%= user.name %></li>
+    <li>氏名：<%= user.name %></li>
+    <li class="picture_field">顔写真:
+      <% if user.picture_url %>
+      <%= image_tag user.picture.url %>
+      <% end %></li>
+    <li>資格：<%= user.trainer.license %></li>
+    <li>経験年数：<%= user.trainer.experience %>年</li>
+    <li>所属：<%= user.trainer.belongs %></li>
+    <li><%= link_to "トレーナー詳細ページへ", trainer_path %></li>
   </ul>
   <% end %>
 <% end %>

@@ -8,11 +8,11 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     #   put @trainer = @user.trainer
     # end
     # # end
-    @user = User.
-    @trainer = @user.trainer.order(user_id: :asc)
-    unless @user.trainer.blank?
-      @trainer = @user.trainer
-    end
+    @user = User.all
+    # @trainer = @user.trainer.order(user_id: :asc)
+    # unless @user.trainer.blank?
+    #   @trainer = @user.trainer
+    # end
   end
 
   def show
