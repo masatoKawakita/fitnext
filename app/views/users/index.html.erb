@@ -1,0 +1,14 @@
+<h1>トレーナー一覧</h1>
+
+ 
+<% @user.each do |user| %>
+
+  <% unless user.trainer.blank? %>
+  <ul>
+    <li>タイトル：<% user.name %></li>
+
+    <% else %>
+    <li>タイトル：<%= user.name %></li>
+  </ul>
+  <% end %>
+<% end %>

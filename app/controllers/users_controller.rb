@@ -1,7 +1,19 @@
 class UsersController < ApplicationController
 before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-
+  def index #TODO:userからuser_idをもつtrainerをindex画面へ
+    # @user = User.all
+    # @user.each do
+    # unless @user.trainer.blank?
+    #   put @trainer = @user.trainer
+    # end
+    # # end
+    @user = User.all
+    @trainer = @user.trainer.order(user_id: :asc)
+    unless @user.trainer.blank?
+      @trainer = @user.trainer
+    end
+  end
 
   def show
   end
@@ -47,3 +59,11 @@ private
     end
   end
 end
+
+
+ 
+# <% @trainer.each do |trainer| %>
+#   <ul>
+#     <li>タイトル：<%= trainer.name %></li>
+#   </ul>
+# <% end %> %>
