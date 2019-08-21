@@ -15,4 +15,5 @@ Devise.setup do |config|
   config.sign_out_via = :delete
   config.unlock_strategy = :email
   config.maximum_attempts = 10
+  config.scoped_views = true
 end

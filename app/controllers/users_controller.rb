@@ -7,7 +7,9 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   end
 
   def edit
-    # @trainer = Trainer.new
+    unless @user.trainer.blank?
+      @trainer = @user.trainer
+    end
   end
 
   def update
@@ -24,12 +26,19 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   end
 
 private
+#TODO:パラメーター正常か確認
+  # def user_params
+  #   params.require(:user).permit(:name, :birthday, :sex, :email, :tel, :picture, :address,
+  #                                 :infomation, :skype, :encrypted_password, :picture_cache,
+  #                                 :remove_picture)
+  # end
 
-  def user_params
+  def user_params  #TODO: trainer_attributes:[:license, :experience, :belongs, :user_id]
     params.require(:user).permit(:name, :birthday, :sex, :email, :tel, :picture, :address,
                                   :infomation, :skype, :encrypted_password, :picture_cache,
                                   :remove_picture)
   end
+
 
   def set_user
     @user = User.find(params[:id])

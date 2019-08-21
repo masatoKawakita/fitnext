@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get "sign_in", :to => "users/sessions#new"
     get "sign_out", :to => "users/sessions#destroy"
     get '/trainer/new' => 'users/registrations#trainer' ,as: :new_trainer
+    # get '/trainers/:id' => 'trainers#update'
   end
 
   resources :users

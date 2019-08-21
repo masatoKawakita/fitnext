@@ -59,7 +59,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_account_update_params #:picture_cache画像を保持する :remove_picture画像を削除する パラメーター
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :birthday, :sex, :email, :tel, :picture, :address,
                                       :infomation, :skype, :encrypted_password, :picture_cache, :remove_picture,
-                                      trainer_attributes:[ :license, :experience, :belongs]])
+                                      trainer_attributes:[ :license, :experience, :belongs, :user_id]])
   end
 
   # アカウント編集後、プロフィール画面に移動する

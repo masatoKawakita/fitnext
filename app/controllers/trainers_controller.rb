@@ -14,13 +14,11 @@ class TrainersController < ApplicationController
   end
 
   def update
-    if @user.id == current_user.id  && trainer.user_id
-      if @user.update(trainer_params)
-        redirect_to user_path(current_user.id && trainer.user_id), notice: "情報を更新しました"
+      if @user.trainer.update(trainer_params)
+        redirect_to user_path(trainer.user_id), notice: "情報を更新しました"
       else
         render "new", alert: "更新に失敗しました"
       end
-    end
   end
 
   def destroy
@@ -31,8 +29,7 @@ private
   def trainer_params
     params.require(:user).permit(:name, :birthday, :sex, :email, :tel, :picture, :address,
                                   :infomation, :skype, :encrypted_password, :picture_cache,
-                                  :remove_picture, :license, :experience, :belongs,
-                                  :license, :experience, :belongs)
+                                  :remove_picture, :license, :experience, :belongs)
   end
 
   def set_trainer
