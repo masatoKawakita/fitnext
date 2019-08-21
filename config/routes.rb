@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'homes#index'
   get 'homes/show'
-  # get '/trainer/new' => 'users/registrations#trainer' ,as: :new_trainer
   # get 'users/:id' => 'users#show'
 
   devise_for :users, controllers: {

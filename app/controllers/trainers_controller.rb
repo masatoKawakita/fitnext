@@ -1,5 +1,5 @@
 class TrainersController < ApplicationController
-  before_action :set_trainer, only: [:show, :edit, :update, :destroy]
+  before_action :set_trainer, only: [:edit, :update, :destroy]
 
   def new
   end
