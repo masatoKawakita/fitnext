@@ -3,6 +3,11 @@
 <% @users.each do |user| %>
 
 <li>トレーナー氏名：<%= user.name %>さん</li>
+<li class = "picture_field">
+  <% if user.picture_url %>
+  <%= image_tag user.picture.url %>
+  <% end %>
+</li>
 <li>資格：<%= user.trainer.license %></li>
 <li>経験：<%= user.trainer.experience %>年</li>
 <li>所属：<%= user.trainer.belongs %></li>
