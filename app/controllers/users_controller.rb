@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:edit, :update, :destroy]
+before_action :set_user, only: [:edit, :update, :destroy] #MEMO: :show はユーザーがトレーナー詳細を確認するために外している
 
   def index
     @trainer_ids = Trainer.pluck(:user_id)
@@ -7,9 +7,13 @@ before_action :set_user, only: [:edit, :update, :destroy]
   end
 
   def show
+    @user = User.find_by(id: params[:id])
   end
 
   def edit
+    # if current_user != @user
+    #   redirect_to users_path
+    # end
     unless @user.trainer.blank?
       @trainer = @user.trainer
     end
@@ -33,7 +37,7 @@ private
   def user_params  #TODO: trainer_attributes:[:license, :experience, :belongs, :user_id]
     params.require(:user).permit(:name, :birthday, :sex, :email, :tel, :picture, :address,
                                   :infomation, :skype, :encrypted_password, :picture_cache,
-                                  :remove_picture)
+                                  :remove_picture, trainer_attributes:[:license, :experience, :belongs, :user_id])
   end
 
 

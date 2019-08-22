@@ -1,6 +1,11 @@
 <h1><%= current_user.name %>のページ</h1> #TODO:@user → current_user
 
-  <%= link_to 'プロフィールを編集する', edit_user_path %>
+<%# <% if current_user.id == @user.id %>
+<%# <% if current_user.try(:id) == @user.id %> %>
+<%if current_user.id == @user.id %>
+  <%= link_to 'プロフィールを編集する', edit_user_path(current_user.id) %>
+<% end %>
+  <%# <%= link_to 'プロフィールを編集する', edit_user_path %> %>
 
   <body>
     <div>
