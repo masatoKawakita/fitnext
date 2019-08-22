@@ -1,67 +1,64 @@
-<h1><%= current_user.name %>のページ</h1> #TODO:@user → current_user
+<h1><%= @user.name %>のページ</h1>
 
-<%# <% if current_user.id == @user.id %>
-<%# <% if current_user.try(:id) == @user.id %> %>
 <%if current_user.id == @user.id %>
-  <%= link_to 'プロフィールを編集する', edit_user_path(current_user.id) %>
+  <%= link_to 'プロフィールを編集する', edit_user_path(@user.id) %>
 <% end %>
-  <%# <%= link_to 'プロフィールを編集する', edit_user_path %> %>
 
   <body>
     <div>
-      <span>氏名: <%= current_user.name %></span>
+      <span>氏名: <%= @user.name %></span>
     </div>
 
     <div>
-      <span>生年月日: <%= current_user.birthday %></span>
+      <span>生年月日: <%= @user.birthday %></span>
     </div>
 
     <div>
-      <span>性別: <%= current_user.sex %></span>
+      <span>性別: <%= @user.sex %></span>
     </div>
 
     <div>
-      <span>メールアドレス: <%= current_user.email %></span>
+      <span>メールアドレス: <%= @user.email %></span>
     </div>
 
     <div>
-      <span>電話番号: <%= current_user.tel %></span>
+      <span>電話番号: <%= @user.tel %></span>
     </div>
 
     <div class="picture_field">
       <span>顔写真: </span>
-      <% if current_user.picture_url %>
-      <%= image_tag current_user.picture.url %>
+      <% if @user.picture_url %>
+      <%= image_tag @user.picture.url %>
       <% end %>
     </div>
 
     <div>
-      <span>住所: <%= current_user.address %></span>
+      <span>住所: <%= @user.address %></span>
     </div>
 
     <div>
-      <span>自己紹介: <%= current_user.infomation %></span>
+      <span>自己紹介: <%= @user.infomation %></span>
     </div>
 
     <div></div>
-      <span>Skype名: <%= current_user.skype %></span>
+      <span>Skype名: <%= @user.skype %></span>
     </div>
 
-  <% unless current_user.trainer.blank? %>
+  <% unless @user.trainer.blank? %>
     <div>
-      <span>資格：<%= current_user.trainer.license %></span>
-    </div>
-
-    <div>
-      <span>経験年数：<%= current_user.trainer.experience %>年</span>
+      <span>資格：<%= @user.trainer.license %></span>
     </div>
 
     <div>
-      <span>所属先：<%= current_user.trainer.belongs %></span>
+      <span>経験年数：<%= @user.trainer.experience %>年</span>
+    </div>
+
+    <div>
+      <span>所属先：<%= @user.trainer.belongs %></span>
     </div>
   <% end %>
 
-  <% if current_user.try(:admin?) && ! (current_user.id == @user) %>
+  <% if @user.try(:admin?) && ! (@user.id == @user) %>
     <h1>管理者ページ<h3>
     <%= link_to '管理者ページ', "/admin" %>
   <% end %>

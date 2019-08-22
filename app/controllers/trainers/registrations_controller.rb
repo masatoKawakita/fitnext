@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Users::RegistrationsController < Devise::RegistrationsController
+class Trainers::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -16,9 +16,33 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   # end
   #   super
   # end
-  
+
+    # トレーナー登録フォーム
+  def new
+    @user = User.new
+    # @user.build_trainer
+    @trainer = @user.build_trainer
+  end
+
   def create
-    super
+    build_resource(sign_up_params)
+    resource.save
+    yield resource if block_given?
+    if resource.persisted?
+      if resource.active_for_authentication?
+        set_flash_message! :notice, :signed_up
+        sign_up(resource_name, resource)
+        redirect_to users_path
+      else
+        set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
+        expire_data_after_sign_in!
+        redirect_to users_path
+      end
+    else
+      clean_up_passwords resource
+      set_minimum_password_length
+      render :new
+    end
     user = User.new(configure_account_update_params)
     user.save
   end
@@ -84,15 +108,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
-
-  # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
-
   def after_sign_up_path_for(resource)
     redirect_to users_path
   end
@@ -101,5 +116,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_inactive_sign_up_path_for(resource)
     redirect_to users_path
   end
-
 end

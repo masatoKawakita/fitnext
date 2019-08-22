@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 before_action :set_user, only: [:edit, :update, :destroy] #MEMO: :show はユーザーがトレーナー詳細を確認するために外している
-
+before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create] #MEMO:ログイン後 トレーナー閲覧のみ可能
   def index
     @trainer_ids = Trainer.pluck(:user_id)
     @users = User.where(id: @trainer_ids)
@@ -34,10 +34,28 @@ before_action :set_user, only: [:edit, :update, :destroy] #MEMO: :show はユー
 
 private
 
-  def user_params  #TODO: trainer_attributes:[:license, :experience, :belongs, :user_id]
-    params.require(:user).permit(:name, :birthday, :sex, :email, :tel, :picture, :address,
-                                  :infomation, :skype, :encrypted_password, :picture_cache,
-                                  :remove_picture, trainer_attributes:[:license, :experience, :belongs, :user_id])
+  def user_params
+    params.require(:user).permit(
+      :name,
+      :birthday,
+      :sex,
+      :email,
+      :tel,
+      :picture,
+      :address,
+      :infomation,
+      :skype,
+      :encrypted_password,
+      :picture_cache,
+      :remove_picture,
+      trainer_attributes: [
+        :id,
+        :license,
+        :experience,
+        :belongs,
+        :user_id
+      ]
+    )
   end
 
 
