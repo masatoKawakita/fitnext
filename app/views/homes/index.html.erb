@@ -39,7 +39,7 @@
 						<br>
 						<a href="index.html">
 							<h1 class="logo">FitNext</h1>
-              <span class="logo-head">Fitness×NextStage</span>
+              <a>Fitness×NextStage</a>
 						</a>
 					</div>
 					<div class="col-md-8 col-md-offset-1 col-xs-7">
@@ -57,25 +57,19 @@
 						    	<!-- Collect the nav links, forms, and other content for toggling -->
 							    <div class="collapse navbar-collapse navbar-def" id="bs-example-navbar-collapse-1">
 							      	<ul class="nav navbar-nav navbar-right">
-							        	<li>
-											<a href="#wrapper"><i class="fa fa-home"></i> Home</a>
-										</li>
-										<li>
-											<a href="#about"><i class="fa fa-bookmark"></i> About</a>
-										</li>
-										<li>
-											<a href="#portfolio"><i class="fa fa-bookmark"></i> Portfolio</a>
-										</li>
-										<li>
-											<a href="#services"><i class="fa fa-tasks"></i> Service</a>
-										</li>
-										<li>
-											<a href="#blog"><i class="fa fa-wordpress"></i> Blog</a>
-										</li>
-										<li>
-											<a href="#testimonials"><i class="fa fa-thumbs-up"></i> Testimonial</a>
-										</li>
+                        <% if user_signed_in? %>
+                          <%= link_to 'トップページ', homes_show_path %>
+                          <%= link_to 'トレーナー一覧', users_path %>
+                          <a href="/users/<%= current_user.id %>">マイページ</a>
+                          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+                        <% else %>
+                          <%= link_to '会員登録', new_user_registration_path %>
+                          <%= link_to 'トレーナー登録',  new_trainer_path %>
+                          <%= link_to 'ログイン', sign_in_path %>
+                        <% end %>
 							      	</ul>
+                          <p class="notice"><%= notice %></p>
+                          <p class="alert"><%= alert %></p>
 							    </div><!-- /navbar-collapse -->
 						  	</div><!-- / .container-fluid -->
 						</nav>
@@ -95,10 +89,10 @@
 				</section>-->
 				<section class="center">
 					<div class="slogan">
-						SLIM &amp; STYLISH
+						もう"老害"だなんて言わせない
 					</div>
 					<div class="secondary-slogan">
-						The Nevada plus Theme By ThemeWagon.
+						私たちは、皆様の健康寿命を伸ばします
 					</div>
 				</section>
 			</div><!-- header -->
@@ -107,8 +101,8 @@
 	            <div class="container about-sec">
 	                <header class="block-heading cleafix">
 							<div class="title-page">
-								<p class="main-header">About us</p>
-							    <p class="sub-header">Make sure you know about us</p>
+								<p class="main-header">経営理念</p>
+							    <p class="sub-header">私たちについて</p>
 							</div>
 						</header>
 	                <div class="divide50"></div>
@@ -116,22 +110,24 @@
 	                    <div class="col-md-4 text-center">
 	                        <div class="aboutus-item">
 	                            <i class="aboutus-icon fa fa-plane"></i>
-	                            <h4 class="aboutus-title">Great Transport</h4>
-	                            <p class="aboutus-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni voluptatum et, alias vero, reprehenderit doloremque neque dignissimos voluptas.</p>
+	                            <h4 class="aboutus-title">MISSION</h4>
+	                            <p class="aboutus-desc">高齢者という概念をなくす</p>
 	                        </div>
 	                    </div>
 	                    <div class="col-md-4 text-center">
 	                        <div class="aboutus-item">
 	                            <i class="aboutus-icon fa fa-usd"></i>
-	                            <h4 class="aboutus-title">Not Expensive</h4>
-	                            <p class="aboutus-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni voluptatum et, alias vero, reprehenderit doloremque neque dignissimos voluptas.</p>
+	                            <h4 class="aboutus-title">VISION</h4>
+	                            <p class="aboutus-desc">高齢者と親族が、生涯健康で笑顔溢れる世界を創る</p>
 	                        </div>
 	                    </div>
 	                    <div class="col-md-4 text-center">
 	                        <div class="aboutus-item">
 	                            <i class="aboutus-icon fa fa-cutlery"></i>
-	                            <h4 class="aboutus-title">Delicious Food</h4>
-	                            <p class="aboutus-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni voluptatum et, alias vero, reprehenderit doloremque neque dignissimos voluptas.</p>
+	                            <h4 class="aboutus-title">VALUE</h4>
+	                            <p class="aboutus-desc">1.お客様にとっての第二の家族になる</p>
+                              <p class="aboutus-desc">2.高齢者と親族の10年先を想像する</p>
+                              <p class="aboutus-desc">3."心""体"に最適なサービスを提供する</p>
 	                        </div>
 	                    </div>
 	                </div>
@@ -141,44 +137,44 @@
 			<div class="content-block" id="portfolio">
 				<div class="container portfolio-sec">
 					<header class="block-heading cleafix">
-						<a href="#" class="btn btn-o btn-lg pull-right">View All</a>
+						<a href="#" class="btn btn-o btn-lg pull-right">画面上部へ</a>
 						<div class="title-page">
-							<p class="main-header">Our Latest Works </p>
-						    <p class="sub-header">Take a look at some of our recent products</p>
+							<p class="main-header">レッスン風景</p>
+						    <p class="sub-header">オフライン・オンライン指導中の一コマ</p>
 					    </div>
 					</header>
 					<section class="block-body">
 						<div class="row">
 							<div class="col-sm-4">
-								<a href="#" class="recent-work" style="background-image:url(assets/images/rain_1-320x240.jpg)">
-									<span class="btn btn-o-white">Lorem Rocks</span>
+								<a href="#" class="recent-work" style="background-image:url(assets/images/sakura.sample1.png)">
+									<%# <span class="btn btn-o-white"></span> %>
 								</a>
 							</div>
 							<div class="col-sm-4">
-								<a href="#" class="recent-work" style="background-image:url(assets/images/min_icons_thumb1-320x240.jpg)">
-									<span class="btn btn-o-white">Lorem Rocks</span>
+								<a href="#" class="recent-work" style="background-image:url(assets/images/sakura.sample2.png)">
+									<%# <span class="btn btn-o-white">Lorem Rocks</%#> %>
 								</a>
 							</div>
 							<div class="col-sm-4">
-								<a href="#" class="recent-work" style="background-image:url(assets/images/flat_icons_thumb.jpg)">
-									<span class="btn btn-o-white">Lorem Rocks</span>
+								<a href="#" class="recent-work" style="background-image:url(assets/images/sakura.sample3.png)">
+									<%# <span class="btn btn-o-white">Lorem Rocks</%#> %>
 								</a>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-4">
-								<a href="#" class="recent-work" style="background-image:url(assets/images/wood-320x240.jpg)">
-									<span class="btn btn-o-white">Lorem Rocks</span>
+								<a href="#" class="recent-work" style="background-image:url(assets/images/demo.png)">
+									<%# <span class="btn btn-o-white">sample</span> %>
 								</a>
 							</div>
 							<div class="col-sm-4">
-								<a href="#" class="recent-work" style="background-image:url(assets/images/bike-320x240.jpg)">
-									<span class="btn btn-o-white">Lorem Rocks</span>
+								<a href="#" class="recent-work" style="background-image:url(assets/images/masato.ace.jpg)">
+									<%# <span class="btn btn-o-white">Lorem Rocks</%#> %>
 								</a>
 							</div>
 							<div class="col-sm-4">
-								<a href="#" class="recent-work" style="background-image:url(assets/images/six_1-320x240.jpg)">
-									<span class="btn btn-o-white">Lorem Rocks</span>
+								<a href="#" class="recent-work" style="background-image:url(assets/images/sakura.sample4.png)">
+									<%# <span class="btn btn-o-white">Lorem Rocks</%#> %>
 								</a>
 							</div>
 						</div>
@@ -188,8 +184,8 @@
 			<div class="content-block parallax" id="services">
 				<div class="container services-sec">
 					<div class="title-page">
-						<p class="main-header">Our Services </p>
-					    <p class="sub-header">A little about what we do</p>
+						<p class="main-header">サービス概要</p>
+					    <p class="sub-header">FitNextが提供するサービス</p>
 					</div>
 					<section class="block-body">
 						<div class="row">
@@ -198,8 +194,8 @@
 									<div class="bar">
 										<i class="fa fa-send-o"></i>
 									</div>
-									<h2 class="service-head">Illustration</h2>
-									<p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
+									<h2 class="service-head">一人一人に最適なメニュー</h2>
+									<p>カウンセリングを通して、お客様の要望や症状に合ったメニューを提供します</p>
 								</div>
 							</div>
 							<div class="col-md-4">
@@ -207,8 +203,8 @@
 									<div class="bar">
 										<i class="fa fa-heart-o"></i>
 									</div>
-									<h2 class="service-head">3D Modeling</h2>
-									<p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
+									<h2 class="service-head">運動の習慣化</h2>
+									<p>「楽しく・短く・支え合う」をもっとうにしたサービスにより、運動の習慣化を促します</p> #FIXME:文言の修正
 								</div>
 							</div>
 							<div class="col-md-4">
@@ -216,8 +212,8 @@
 									<div class="bar">
 										<i class="fa fa-camera-retro"></i>
 									</div>
-									<h2 class="service-head">Photography</h2>
-									<p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
+									<h2 class="service-head">健康寿命を伸ばします</h2>
+									<p>有資格のフィットネストレーナーによる１対１の指導により、お客様の心身の健康を向上させ、そのご家族の心的負担を取り除きます。</p> #FIXME: 文言の修正 (お客様？高齢者？)
 								</div>
 							</div>
 						</div>
@@ -227,34 +223,32 @@
 			<div class="content-block" id="blog">
 				<div class="container blog-sec">
 					<header class="block-heading cleafix">
-						<a href="#" class="btn btn-o btn-lg pull-right">View All</a>
+						<a href="#" class="btn btn-o btn-lg pull-right">画面上部へ</a>
 						<div class="title-page">
-							<p class="main-header">From the Blog</p>
-						    <p class="sub-header">Keep up with the latest happenings.</p>
+							<p class="main-header">スタッフ紹介</p>
+						  <p class="sub-header">FitNext創設メンバー</p>
 						</div>
 					</header>
 					<section class="block-body">
 						<div class="row">
 							<div class="col-sm-4 blog-post">
-								<img src="assets/images/bike_water1-1000x600.jpg">
-								<a href="#"><h2>Design Your Mind</h2></a>
-								<div class="date">3 Nov, 2014</div>
-								<p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-								<a href="">Read More</a>
+								<img src="assets/images/masato.png">
+								<a href="#"><h2>高齢者と親族を笑顔で包みたい！</h2></a>
+								<div class="date">川北 雅冬</div>
+								<p>昨年から、90歳の祖母とフィットネスを開始。曲がりきった背骨が伸び、体も自由に動かせるようになりました。その時に祖母が見せた”嬉し涙”をみて、一念発起。
+「健康不安を抱える高齢者が手軽に運動できる環境を整えたい！高齢者の"健康不安"を取り除き、高齢者とその家族・親族が幸せに生活できる環境を提供したい。」との思いからFitNextを立ち上げました。</p>
 							</div>
 							<div class="col-sm-4 blog-post">
-								<img src="assets/images/mac_glasses1-1000x600.jpg">
-								<a href="#"><h2>Winter Is Comming</h2></a>
-								<div class="date">3 Nov, 2014</div>
-								<p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-								<a href="">Read More</a>
+								<img src="assets/images/sakura.png">
+								<a href="#"><h2>"安く、楽しく、正しく、長く"をモットーに！</h2></a>
+								<div class="date">長谷川 さくら</div>
+								<p>普通のスポーツジムと違いマンツーマンで行うパーソナルトレーニングは費用も高く、"続けたいんだけど経済的に厳しい"というお客様もたくさんいらっしゃいました。そういった現状を目の当たりにし、パーソナルトレーニングでなくても、お客様に正しいトレーニングを指導させてもらえる環境を作りたいと思っています。1人でも多くのお客様に、この合言葉を実感して頂けるよう全力を尽くします。</p>
 							</div>
 							<div class="col-sm-4 blog-post">
-								<img src="assets/images/road-1000x600.jpg">
-								<a href="#"><h2>The Illustration</h2></a>
-								<div class="date">3 Nov, 2014</div>
-								<p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-								<a href="">Read More</a>
+								<img src="assets/images/sakura.kai.png">
+								<a href="#"><h2>幸せになるお手伝いを！</h2></a>
+								<div class="date">長谷川 海</div>
+								<p>健康である事の喜びは、普段は中々気づかないものです。また、自分のなりたい身体になれば自信が持て、人生も豊かになります。適度に、頑張りすぎずに生活の一部として身体を動かすことが組み込める様に、トレーニングの楽しさが伝えられる存在になりたいです。科学的根拠に基づきトレーニングを指導させていただき、皆様の大切な時間を最大限効率化させるお手伝いをさせていただきます。</p>
 							</div>
 						</div>
 					</section>
@@ -262,16 +256,16 @@
 			</div><!-- #blog -->
 			<div class="content-block parallax" id="parallax">
 				<div class="container">
-					<h3 class="call-action pull-left">In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis.</h3>
-					<a href="#" class="pull-right btn btn-o-white btn-lg">Get a free quote</a>
+					<h3 class="call-action pull-left">FitNextを体験してみませんか？</h3>
+					<a href="#" class="pull-right btn btn-o-white btn-lg">会員登録はこちらから</a> #FIXME:リンク
 				</div>
 			</div><!-- #parallax -->
 			<div class="content-block" id="testimonials">
 				<div class="container testimonial-sec">
 					<header class="block-heading cleafix">
 						<div class="title-page  pull-left">
-							<p class="main-header">Testimonial</p>
-						    <p class="sub-header">What our client says</p>
+							<p class="main-header">お客様の声</p>
+						    <p class="sub-header">多くの方から喜びの声が届いています</p>
 						</div>
 					</header>
 					<section class="block-body">
@@ -287,26 +281,26 @@
 							  	<div class="carousel-inner" role="listbox">
 								    <div class="item active">
 								      	<div class="img-center">
-								      		<img class="img-circle circular-img" src="assets/images/01_200x200.png">
+								      		<img class="img-circle circular-img" src="assets/images/sobo1.jpg">
 								      	</div>
 								      	<h3>
-								      		Create a website that you are gonna be proud of. Be it Business, Portfolio, Photography, eCommerce & much more.
+								      		90代女性：トレーナーさんが優しくて安心しました。久しぶりに楽しく体を動かすことができました。
 								      	</h3>
 								    </div><!-- /.item -->
 								    <div class="item">
 								    	<div class="img-center">
-								      		<img class="img-circle circular-img" src="assets/images/02_200x200.png">
+								      		<img class="img-circle circular-img" src="assets/images/user1.jpg">
 								      	</div>
 								       	<h3>
-								       		Create a website that you are gonna be proud of. Be it Business, Portfolio, Photography, eCommerce & much more.
+								       		60代女性：運動面だけでなく、食事面についても丁寧に指導していただきました。一ヶ月でマイナス５kgダイエットに成功しました。
 								       	</h3>
 								    </div><!-- /.item -->
 								    <div class="item">
 								    	<div class="img-center">
-								      		<img class="img-circle circular-img" src="assets/images/03_200x200.png">
+								      		<img class="img-circle circular-img" src="assets/images/user2.jpg">
 								        </div>
 								       	<h3>
-								       		Create a website that you are gonna be proud of. Be it Business, Portfolio, Photography, eCommerce & much more.
+								       		70代女性：その日の体調に合わせてメニューを考えてくださるため、とても助かります。励ましの言葉が嬉しく、運動するのが習慣化してきました。
 								       	</h3>
 								    </div><!-- /.item -->
 							  	</div><!-- /.carousel-inner -->
@@ -319,23 +313,23 @@
 				<div class="container">
 					<div class="row">
 							<div class="col-sm-4 blog-post">
-								<h2 class="footer-block">Have a question</h2>
-								<p>Praesent lacinia dapibus, accumsan vesti bulum. Pellen tesque molestie mollis.</p>
-								<p>Mauris nec ligula dui, fermentum nisl ut magna dolor, rhoncus wisi. In lacus sagittis luctus, nisl eros, sit amet tempor et, accumsan eget, pede. Suspendisse est. Ut rhoncus eu, pede. Vestibulum ante ipsum dolor lorem, iaculis mi. Pellentesque eu urna eget dolor. Duis luctus a, dolor. Duis ac sapien. 
+								<h2 class="footer-block">お問い合わせ</h2>
+								<p>FitNextについて知りたいことや疑問など、お気軽にお問い合わせください。</p>
+								<p>#FIXME:文言の追加
 								</p>
-								<p>Estibulum dapibus, maurimalesfames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus ultricies gravida vitae...</p>
+								<p>#FIXME:文言の追加</p>
 							</div>
 							<div class="col-sm-4 blog-post">
-								<h2 class="footer-block">Leave us a message</h2>
+								<h2 class="footer-block">お問い合わせフォーム(現在閉鎖中）</h2>
 								<form action="contact-form.php" id="contactForm" method="post" name="contactform" class="" role="form">
 									<div class="form-group">
-								    	<input type="text" class="form-control form-control-white" id="name" name="name" placeholder="Your Name" required>
+								    	<input type="text" class="form-control form-control-white" id="name" name="name" placeholder="氏名" required>
 								  	</div>
 								    <div class="form-group">
-								    	<input type="email" class="form-control form-control-white" id="email" name="email" placeholder="Enter email" required>
+								    	<input type="email" class="form-control form-control-white" id="email" name="email" placeholder="メールアドレス" required>
 								    </div>
 								    <div class="form-group">
-								    	<textarea class="form-control form-control-white" id="message" name="massage" placeholder="Write Something" required></textarea>
+								    	<textarea class="form-control form-control-white" id="message" name="massage" placeholder="お問い合わせ内容" required></textarea>
 								    </div>
 								    <div id="contactFormResponse"></div>
 								    <div class="form-group">
@@ -344,30 +338,29 @@
 								</form>
 							</div>
 							<div class="col-sm-4 blog-post">
-								<h2 class="footer-block">Contact Details</h2>
+								<h2 class="footer-block">会社詳細</h2>
 								<ul>
-									<li class="address-sub"><i class="fa fa-map-marker"></i>Office Address</li>
+									<li class="address-sub"><i class="fa fa-map-marker"></i>所在地</li>
 										<p>
-											Blabla Parkway, P.o Box 353 Mountain View. United States of America. 
+                    FIXME:所在地
 										</p>
-									<li class="address-sub"><i class="fa fa-phone"></i>Phone</li>
+									<li class="address-sub"><i class="fa fa-phone"></i>電話番号</li>
 										<p>
-											Local: 1-800-123-hello<br>
-											Mobile: 1-800-123-hello
+											000-0000-0000(sample)<br>
 										</p>
 									<li class="address-sub"><i class="fa fa-envelope-o"></i>Email Address</li>
 										<p>
-											<a href="mailto:info@themewagon.com">info@themewagon.com</a><br>
-											<a href="http://www.themewagon.com/">www.themewagon.com</a>
+											<a href="mailto:info@themewagon.com">sample@.com</a><br>
+											<a href="http://www.themewagon.com/">fitnext.com ＃FIXME:アドレスや電話番号どうするか</a>
 										</p>
 								</ul>
 								<div class="social">
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-instagram"></i></a>
-									<a href="#"><i class="fa fa-pinterest-p"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-									<a href="#"><i class="fa fa-skype"></i></a>
+									<a href="https://twitter.com/home" target="_blank"><i class="fa fa-twitter"></i></a>
+									<a href="https://ja-jp.facebook.com/login/" target="_blank" ><i class="fa fa-facebook"></i></a>
+									<a href="https://www.instagram.com/accounts/login/?hl=ja" target="_blank" ><i class="fa fa-instagram"></i></a>
+									<a href="https://www.pinterest.jp/" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+									<a href="https://aboutme.google.com" target="_blank"><i class="fa fa-google-plus"></i></a>
+									<a href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1566577494&rver=7.1.6819.0&wp=MBI_SSL&wreply=https%3A%2F%2Flw.skype.com%2Flogin%2Foauth%2Fproxy%3Fclient_id%3D572381%26redirect_uri%3Dhttps%253A%252F%252Fweb.skype.com%252FAuth%252FPostHandler%26state%3Df14b8b14-3c70-4e58-9d29-c90fbb66b79b%26site_name%3Dlw.skype.com&lc=1033&id=293290&mkt=ja-JP&psi=skype&lw=1&cobrandid=2befc4b5-19e3-46e8-8347-77317a16a5a5&client_flight=ReservedFlight33%2CReservedFlight67" target="_blank"><i class="fa fa-skype"></i></a>
 								</div>
 							</div>
 						</div>
@@ -376,7 +369,7 @@
 			<div class="content-block footer-bottom" id="footer">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs-6">&copy; Copyright Nevada Plus 2015</div>
+						<div class="col-xs-6">&copy; Copyright FitNext 2019</div>
 						<div class="col-xs-6 text-right">Theme by <a href="http://www.themewagon.com/" target="_blink">ThemeWagon</a></div>
 					</div>
 				</div>

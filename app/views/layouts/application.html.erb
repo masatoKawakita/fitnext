@@ -8,24 +8,7 @@
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <header>
-      <nav>
-        <% if user_signed_in? %>
-          <%= link_to 'トップページ', homes_show_path %>
-          <%= link_to 'トレーナー一覧', users_path %>
-          <a href="/users/<%= current_user.id %>">マイページ</a>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        <% else %>
-        <%= link_to '会員登録', new_user_registration_path %>
-        <%= link_to 'トレーナー登録',  new_trainer_path %>
-        <%= link_to 'ログイン', sign_in_path %>
-        <% end %>
-      </nav>
-    </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
