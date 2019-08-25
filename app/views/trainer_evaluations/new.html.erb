@@ -1,72 +1,6 @@
+<body>
+<h1>トレーナー評価フォーム</h1>
 
-
-<h1><%= @user.name %>のページ</h1>
-
-<%if current_user.id == @user.id %>
-  <%= link_to 'プロフィールを編集する', edit_user_path(@user.id) %>
-<% end %>
-
-  <body>
-    <div>
-      <span>氏名: <%= @user.name %></span>
-    </div>
-
-    <div>
-      <span>生年月日: <%= @user.birthday %></span>
-    </div>
-
-    <div>
-      <span>性別: <%= @user.sex %></span>
-    </div>
-
-    <div>
-      <span>メールアドレス: <%= @user.email %></span>
-    </div>
-
-    <div>
-      <span>電話番号: <%= @user.tel %></span>
-    </div>
-
-    <div class="picture_field">
-      <span>顔写真: </span>
-      <% if @user.picture_url %>
-      <%= image_tag @user.picture.url %>
-      <% end %>
-    </div>
-
-    <div>
-      <span>住所: <%= @user.address %></span>
-    </div>
-
-    <div>
-      <span>自己紹介: <%= @user.infomation %></span>
-    </div>
-
-    <div></div>
-      <span>Skype名: <%= @user.skype %></span>
-    </div>
-
-  <% unless @user.trainer.blank? %>
-    <div>
-      <span>資格：<%= @user.trainer.license %></span>
-    </div>
-
-    <div>
-      <span>経験年数：<%= @user.trainer.experience %>年</span>
-    </div>
-
-    <div>
-      <span>所属先：<%= @user.trainer.belongs %></span>
-    </div>
-  <% end %>
-
-  <% if @user.try(:admin?) && ! (@user.id == @user) %>
-    <h1>管理者ページ<h3>
-    <%= link_to '管理者ページ', "/admin" %>
-  <% end %>
-
-
-  <h1>評価フォーム </h1>
   <% if current_user.trainer.blank? %>
 
   <%= form_with model:@user do |f| %>
@@ -115,5 +49,4 @@
       </div>
     </div>
   <% end %>
-</body>
-<% end %>
+  </body>

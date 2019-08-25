@@ -13,6 +13,7 @@
 @import “bootstrap-sprockets”;
 @import "bootstrap";
 @import "font-awesome";
+ *= require jquery.raty
  *= require font-awesome
  *= require_tree .
  *= require_self

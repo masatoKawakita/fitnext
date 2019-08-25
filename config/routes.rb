@@ -19,4 +19,5 @@ Rails.application.routes.draw do
 
   resources :users
   resources :trainers
+  resources :trainer_evaluations
 end
