@@ -1,13 +1,13 @@
 $(document).on("turbolinks:load", () => {
   const pathname = location.href;
   const userShowRegExp = new RegExp(/.+\/users\/\d+/);
-  // const otherRegExp = new RegExp(/.+\/users\/\d+/); #MEMMO:星を出したいパスを指定 このパス＝users/showパスに表示
+  const trainerEvaluationsNewRegExp = new RegExp(/.+\/trainer_evaluations\/new/);
+  // #FIXME:パスが違う？
   const starOnImagePath = image_path('star-on.png');
   const starOffImagePath = image_path('star-off.png');
   const starHalfImagePath = image_path('star-half.png');
 
-  // const checkPath = () => userShowRegExp.test(pathname) || otherRegExp.text(pathname); #MEMO：星を出したいパスを指定
-  const checkPath = () => userShowRegExp.test(pathname);
+  const checkPath = () => userShowRegExp.test(pathname) || trainerEvaluationsNewRegExp.test(pathname);
 
   if (checkPath()) {
     $('#star_rank1').raty({
