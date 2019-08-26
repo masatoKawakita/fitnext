@@ -81,7 +81,7 @@
   <% end %>
 
   <% if current_user.trainer.blank? %>
-  <li><%= link_to '評価する', edit_trainer_evaluation_path(@user.trainer.id) %></li>
+  <li><%= link_to '評価する', new_trainer_evaluation_path(us) %></li>
   <% end %>
 
   <% if @user.try(:admin?) && ! (@user.id == @user) %>
