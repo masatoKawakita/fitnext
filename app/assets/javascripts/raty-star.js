@@ -1,14 +1,14 @@
 $(document).on("turbolinks:load", () => {
   const pathname = location.href;
-  const userShowRegExp = new RegExp(/.+\/users\/\d+/);
-  const trainerEvaluationsNewRegExp = new RegExp(/.+\/trainer_evaluations\/new/);
-  // #FIXME:パスが違う？
+  // const userShowRegExp = new RegExp(/.+\/users\/\d+/);
+  const trainerEvaluationsEditRegExp = new RegExp(/.+\/trainer_evaluations\/\d+\/\edit/);
+  // MEMO:星評価を出したいパスを指定する：下とセットで使用する
   const starOnImagePath = image_path('star-on.png');
   const starOffImagePath = image_path('star-off.png');
   const starHalfImagePath = image_path('star-half.png');
 
-  const checkPath = () => userShowRegExp.test(pathname) || trainerEvaluationsNewRegExp.test(pathname);
-
+  const checkPath = () => trainerEvaluationsEditRegExp.test(pathname);
+  // MEMO:星評価を出したいパスを指定する：const checkPath = () => userShowRegExp.test(pathname) || trainerEvaluationsNewRegExp.test(pathname);
   if (checkPath()) {
     $('#star_rank1').raty({
       size     : 36,
