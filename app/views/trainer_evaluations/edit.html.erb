@@ -3,7 +3,7 @@
 
   <% if current_user.trainer.blank? %>
 
-  <%= form_with model:@user do |f| %>
+  <%= form_with(model:@user, local: true) do |f| %>
     <!-- 「楽しさ」評価 -->
     <div class="form-group row" id='star_rank1'>
       <%= f.label :fun_rate, '楽しさ', class:'col-md-3 col-form-label' %>
@@ -36,7 +36,7 @@
 
     <div class="form-group row">
       <%= f.label :content, '評価（自由記述）', class:'col-md-3 col-form-label' %>
-      <div class="col-md-9">
+      <div class="col-md-8">
         <%= f.text_area :content, class: "form-control", rows: "5",
           placeholder:'皆様の評価が、FitNextのサービス向上に必要です。トレーナーさんから指導された内容やその感想を詳しくお書きください。' %>
       </div>

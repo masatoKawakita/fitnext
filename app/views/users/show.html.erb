@@ -19,6 +19,7 @@
       <span>性別: <%= @user.sex %></span>
     </div>
 
+  <% if @user.trainer.blank? %>
     <div>
       <span>メールアドレス: <%= @user.email %></span>
     </div>
@@ -27,15 +28,16 @@
       <span>電話番号: <%= @user.tel %></span>
     </div>
 
+    <div>
+      <span>住所: <%= @user.address %></span>
+    </div>
+  <% end %>
+
     <div class="picture_field">
       <span>顔写真: </span>
       <% if @user.picture_url %>
       <%= image_tag @user.picture.url %>
       <% end %>
-    </div>
-
-    <div>
-      <span>住所: <%= @user.address %></span>
     </div>
 
     <div>
