@@ -1,53 +1,57 @@
 <body>
 <h1>トレーナー評価フォーム</h1>
 
-  <% if current_user.trainer.blank? %>
 
-  <%= form_with(model:@trainer_evaluation, local: true) do |f| %>
+    <%#= form_with(model: @trainer_evaluation, local: true) do |f| %>
+<%= form_for(@trainer_evaluation) do |f| %>
+    <%# <%= trainer.fields_for :trainer_evaluations do |trainer_evaluation| %>
+    <%# <%= f.fields_for :traienr_evaluations do |trainer_evaluation| %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :trainer_id %>
+
     <!-- 「楽しさ」評価 -->
-    <div class="form-group row" id='star_rank1'>
-      <%= f.label :fun_rate, '楽しさ', class:'col-md-3 col-form-label' %>
-      <%= f.hidden_field :fun_rate, id: :trainer_evaluations_fun_rate %>
-    </div>
-
-    <!-- 「わかりやすさ」評価 -->
-    <div class="form-group row" id='star_rank2'>
-      <%= f.label :understandable_rate, 'わかりやすさ', class:'col-md-3 col-form-label' %>
-      <%= f.hidden_field :understandable_rate, id: :trainer_evaluations_understandable_rate %>
-    </div>
-
-    <!-- 「丁寧さ」評価 -->
-    <div class="form-group row" id='star_rank3'>
-      <%= f.label :politeness_rate, 'ていねいさ', class:'col-md-3 col-form-label' %>
-      <%= f.hidden_field :politeness_rate, id: :trainer_evaluations_politeness_rate %>
-    </div>
-
-    <!-- 「優しさ」評価 -->
-    <div class="form-group row" id='star_rank4'>
-      <%= f.label :kindness_rate,'優しさ', class:'col-md-3 col-form-label' %>
-      <%= f.hidden_field :kindness_rate, id: :trainer_evaluations_kindness_rate %>
-    </div>
-
-    <!-- 「熱心さ」評価 -->
-    <div class="form-group row" id='star_rank5'>
-      <%= f.label :passion_rate,'熱心さ', class:'col-md-3 col-form-label' %>
-      <%= f.hidden_field :passion_rate, id: :trainer_evaluations_passion_rate %>
-    </div>
-
-    <div class="form-group row">
-      <%= f.label :content, '評価（自由記述）', class:'col-md-3 col-form-label' %>
-      <div class="col-md-8">
-        <%= f.text_area :content, class: "form-control", rows: "5",
-          placeholder:'皆様の評価が、FitNextのサービス向上に必要です。トレーナーさんから指導された内容やその感想を詳しくお書きください。' %>
+      <div class="form-group row" id='star_rank1'>
+        <%= f.label :fun_rate, '楽しさ', class:'col-md-3 col-form-label' %>
+        <%= f.hidden_field :fun_rate, id: :trainer_evaluation_fun_rate %>
       </div>
-    </div>
 
-    <!-- 確認ボタン -->
-    <div class="form-group row justify-content-end">
-      <div class="col-md-9">
-        <%= f.submit '投稿する', class:"btn btn-success" %>
+      <!-- 「わかりやすさ」評価 -->
+      <div class="form-group row" id='star_rank2'>
+        <%= f.label :understandable_rate, 'わかりやすさ', class:'col-md-3 col-form-label' %>
+        <%= f.hidden_field :understandable_rate, id: :trainer_evaluations_understandable_rate %>
       </div>
-    </div>
-  <% end %>
+
+      <!-- 「丁寧さ」評価 -->
+      <div class="form-group row" id='star_rank3'>
+        <%= f.label :politeness_rate, 'ていねいさ', class:'col-md-3 col-form-label' %>
+        <%= f.hidden_field :politeness_rate, id: :trainer_evaluations_politeness_rate %>
+      </div>
+
+      <!-- 「優しさ」評価 -->
+      <div class="form-group row" id='star_rank4'>
+        <%= f.label :kindness_rate,'優しさ', class:'col-md-3 col-form-label' %>
+        <%= f.hidden_field :kindness_rate, id: :trainer_evaluations_kindness_rate %>
+      </div>
+
+      <!-- 「熱心さ」評価 -->
+      <div class="form-group row" id='star_rank5'>
+        <%= f.label :passion_rate,'熱心さ', class:'col-md-3 col-form-label' %>
+        <%= f.hidden_field :passion_rate, id: :trainer_evaluations_passion_rate %>
+      </div>
+
+      <div class="form-group row">
+        <%= f.label :content, '評価（自由記述）', class:'col-md-3 col-form-label' %>
+        <div class="col-md-8">
+          <%= f.text_area :content, class: "form-control", rows: "5",
+            placeholder:'皆様の評価が、FitNextのサービス向上に必要です。トレーナーさんから指導された内容やその感想を詳しくお書きください。' %>
+        </div>
+      </div>
+
+      <!-- 確認ボタン -->
+      <div class="form-group row justify-content-end">
+        <div class="col-md-9">
+          <%= f.submit '投稿する', class:"btn btn-success" %>
+        </div>
+      </div>
   <% end %>
   </body>

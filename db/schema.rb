@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 2019_08_19_020259) do
   enable_extension "plpgsql"
 
   create_table "trainer_evaluations", force: :cascade do |t|
-    t.float "fun_rate", null: false
-    t.float "understandable_rate", null: false
-    t.float "politeness_rate", null: false
-    t.float "kindness_rate", null: false
-    t.float "passion_rate", null: false
-    t.text "content", null: false
+    t.float "fun_rate"
+    t.float "understandable_rate"
+    t.float "politeness_rate"
+    t.float "kindness_rate"
+    t.float "passion_rate"
+    t.text "content"
     t.bigint "user_id"
     t.bigint "trainer_id"
     t.index ["trainer_id"], name: "index_trainer_evaluations_on_trainer_id"

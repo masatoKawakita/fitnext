@@ -17,7 +17,8 @@ Rails.application.routes.draw do
     # get '/trainers/:id' => 'trainers#update'
   end
 
-  resources :users
-  resources :trainers
+  resources :users do
+    resources :trainer_evaluations
+  end
   resources :trainer_evaluations
 end

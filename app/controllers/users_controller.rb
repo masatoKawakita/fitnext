@@ -8,6 +8,7 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
 
   def show
     @user = User.find_by(id: params[:id])
+    @trainer = Trainer.find_by(user_id: @user.id)
   end
 
   def edit
