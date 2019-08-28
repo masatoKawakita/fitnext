@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     # get '/trainers/:id' => 'trainers#update'
   end
 
-  resources :users do
+  resources :users, only: %W(index show edit update destroy) do
     resources :trainer_evaluations
   end
   resources :trainer_evaluations
