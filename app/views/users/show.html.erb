@@ -65,7 +65,7 @@
 #FIXME: 評価表示
 
 
-  <% if @user.trainer.blank? %>
+  <% if @user.trainer.present? %>
     <li><%= link_to '評価する', new_user_trainer_evaluation_path(user_id: @user, trainer_id: @user.trainer) %></li>
   <% end %>
 
