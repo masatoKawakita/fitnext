@@ -60,25 +60,10 @@
     <div>
       <span>所属先：<%= @user.trainer.belongs %></span>
     </div>
+  <% end %>
 
 #FIXME: 評価表示
-    <h3>評価</h3>
-    <div>
-      <%# <span>「楽しさ」：<%= @user.trainer.fun_rate %></span> %>
-    </div>
-    <div>
-      <%# <span>「わかりやすさ」：<%= @user.trainer.understandable_rate %></span> %>
-    </div>
-    <div>
-      <%# <span>「ていねいさ」：<%= @user.trainer.politeness_rate %></span> %>
-    </div>
-    <div>
-      <%# <span>「親切さ」：<%= @user.trainer.kindness_rate %></span> %>
-    </div>
-    <div>
-      <%# <span>「熱心さ」：<%= @user.trainer.passion_rate %></span> %>
-    </div>
-  <% end %>
+
 
   <% unless @user.trainer.blank? %>
     <li><%= link_to '評価する', new_user_trainer_evaluation_path(user_id: @user, trainer_id: @user.trainer) %></li>

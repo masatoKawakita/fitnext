@@ -6,8 +6,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     flash[:notice] = "ログインしました"
-    # redirect_to user_path(current_user)
-    user_path(current_user)
+    user_path(resource) and return
   end
 
   # def after_sign_out_path_for(resource)

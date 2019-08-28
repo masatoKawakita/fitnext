@@ -14,7 +14,7 @@ class TrainerEvaluationsController < ApplicationController
     if @trainer_evaluation.save
       redirect_to users_path , notice:"評価を送信しました。ご協力ありがとうございました。"
     else
-      redirect_to root_path
+      redirect_to user_path
     end
   end
 
