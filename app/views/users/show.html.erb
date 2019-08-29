@@ -60,10 +60,29 @@
     <div>
       <span>所属先：<%= @user.trainer.belongs %></span>
     </div>
+
+<h3>評価</h3>
+  <% @trainer.trainer_evaluations.each do |trainer_evaluation| %>
+    <div>
+      <span>「楽しさ」：<%= trainer_evaluation.fun_rate %></span>
+    </div>
+    <div>
+      <span>「わかりやすさ」：<%= trainer_evaluation.understandable_rate %></span>
+    </div>
+    <div>
+      <span>「丁寧さ」：<%= trainer_evaluation.politeness_rate %></span>
+    </div>
+    <div>
+      <span>「優しさ」：<%= trainer_evaluation.kindness_rate %></span>
+    </div>
+    <div>
+      <span>「熱心さ」：<%= trainer_evaluation.passion_rate %></span>
+    </div>
+    <div>
+      <span>「自由記述」：<%= trainer_evaluation.content %></span>
+    </div>
   <% end %>
-
-#FIXME: 評価表示
-
+  <% end %>
 
   <% if @user.trainer.present? %>
     <li><%= link_to '評価する', new_user_trainer_evaluation_path(user_id: @user, trainer_id: @user.trainer) %></li>
