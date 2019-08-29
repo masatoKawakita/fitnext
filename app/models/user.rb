@@ -12,4 +12,5 @@ class User < ApplicationRecord
 
   has_one :trainer, inverse_of: :user
   accepts_nested_attributes_for :trainer
+  has_many :trainer_evaluations, dependent: :destroy
 end

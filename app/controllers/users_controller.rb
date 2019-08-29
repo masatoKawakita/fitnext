@@ -4,10 +4,13 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
   def index
     @trainer_ids = Trainer.pluck(:user_id)
     @users = User.where(id: @trainer_ids)
+
+    # @users = User.all
   end
 
   def show
     @user = User.find_by(id: params[:id])
+    @trainer = Trainer.find_by(user_id: @user.id)
   end
 
   def edit
