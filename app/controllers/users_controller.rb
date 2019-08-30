@@ -9,8 +9,19 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
   end
 
   def show
-    @user = User.find_by(id: params[:id])
-    @trainer = Trainer.find_by(user_id: @user.id)
+    if Trainer.find_by(user_id: current_user.id).present?
+      me_trainer = current_user
+      @user = User.find_by(id: params[:id])
+      @trainer = Trainer.find_by(user_id: @user.id)
+      if @user == me_trainer
+        # 自分がトレーナであり、ユーザーshowが自分のページであったら何もしない
+      else
+        redirect_to :root, notice: "URLが不正です。"
+      end
+    else
+      @user = User.find_by(id: params[:id])
+      @trainer = Trainer.find_by(user_id: @user.id)
+    end
   end
 
   def edit
@@ -62,7 +73,7 @@ private
   end
 
 
-  def set_user #TODO:user_idが付与されているuser(trainer)はユーザーページへいける
+  def set_user
     @user = User.find(params[:id])
     if current_user != @user
         redirect_to root_path,  alert: '違反行為です! 他のユーザーページにはいけません。'

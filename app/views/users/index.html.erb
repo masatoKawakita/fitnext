@@ -1,17 +1,28 @@
-<h1>トレーナー一覧</h1>
+<h1 class="text-center">トレーナー一覧</h1>
+<p><%= notice %></p>
 
 <% @users.each do |user| %>
-
-<li>トレーナー氏名：<%= user.name %>さん</li>
-<li class = "picture_field">
-  <% if user.picture_url %>
-  <%= image_tag user.picture.url %>
-  <% end %>
-</li>
-<li>資格：<%= user.trainer.license %></li>
-<li>経験：<%= user.trainer.experience %>年</li>
-<li>所属：<%= user.trainer.belongs %></li>
-<li><%= link_to 'トレーナー詳細ページ', user_path(user) %></li>
-
+<div class="mx-auto">
+  <div class="card mb-3">
+    <div class="row no-gutters" style="margin-bottom: 20px;">
+      <div class="col-md-4 picture_field">
+        <% if user.picture_url %>
+        <%= image_tag user.picture.url %>
+        <% end %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= user.name %>トレーナー</h5>
+          <p class="card-text">
+          資格：<%= user.trainer.license %>
+          経験：<%= user.trainer.experience %>年
+          所属：<%= user.trainer.belongs %>
+          </p>
+          <p>自己紹介：<%= user.infomation %></p>
+          <p><%= link_to '詳細ページ', user_path(user) %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>
-
