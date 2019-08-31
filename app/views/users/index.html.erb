@@ -5,7 +5,7 @@
 <div class="mx-auto">
   <div class="card mb-3">
     <div class="row no-gutters" style="margin-bottom: 20px;">
-      <div class="col-md-4 picture_field">
+      <div class="col-md-4 picture_field", style="margin-top: 20px;">
         <% if user.picture_url %>
         <%= image_tag user.picture.url %>
         <% end %>
@@ -15,7 +15,11 @@
           <h5 class="card-title"><%= user.name %>トレーナー</h5>
           <p class="card-text">
           資格：<%= user.trainer.license %>
+          </p>
+          <p class="card-text">
           経験：<%= user.trainer.experience %>年
+          </p>
+          <p class="card-text">
           所属：<%= user.trainer.belongs %>
           </p>
           <p>自己紹介：<%= user.infomation %></p>
