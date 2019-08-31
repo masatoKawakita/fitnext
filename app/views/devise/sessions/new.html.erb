@@ -32,7 +32,7 @@
         <div>
         <%= f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード',class:'fadeIn third session-input'%>
         </div>
-        <div>
+        <div class ="session-checkbox">
         <% if devise_mapping.rememberable? %>
         <%= f.check_box :remember_me %>
         <%= f.label :ログインを記憶する %>
@@ -44,7 +44,7 @@
       </form>
 
       <!-- Remind Passowrd -->
-      <div id="session-formFooter">
+      <div id="session-formFooter", class="session-link">
         <%= render "devise/shared/links" %>
       </div>
   <% end %>
