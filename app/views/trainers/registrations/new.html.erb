@@ -1,93 +1,79 @@
-<h2>トレーナー会員登録</h2>
+<head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <%= notice %>
+  <%= alert %>
+</head>
 
-<%= form_for(resource, as: resource_name, url: create_trainer_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<body>
+  <%= form_for(resource, as: resource_name, url: create_trainer_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <strong><%= f.label :＊の項目は必ず記入してください。%></strong><br />
+    <div class="mx-auto">
+      <div class="session-wrapper fadeInDown">
+        <div id="session-formContent">
+          <!-- Tabs Titles -->
 
-  <div class="field">
-    <%= f.label :＊氏名 %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
+          <!-- Icon -->
+          <div class="fadeIn first">
+          <%= image_tag ('/FitNext-logo.png') %>
+          <h2>トレーナー会員登録</h2>
+          </div>
 
-  <div class="field">
-    <%= f.label :＊生年月日 %><br />
-    <%= f.date_field :birthday, autofocus: true, autocomplete: "birthday" ,placeholder: '1990-01-01'%>
-  </div>
-
-  <div class="field">
-    <%= f.label :＊性別 %><br />
-    <%= f.label :男 %>
-    <%= f.radio_button :sex, :男 %>
-    <%= f.label :女 %>
-    <%= f.radio_button :sex, :女 %>
-    <%= f.label :その他 %>
-    <%= f.radio_button :sex, :その他 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :＊メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :＊電話番号（ハイフン有り） %><br />
-    <%= f.telephone_field :tel, autofocus: true, autocomplete: "tel" %>
-  </div>
-
-  <div class="picture_field">
-    <%= f.label :顔写真 %><br />
-    <%= f.file_field :picture, autofocus: true, autocomplete: "picture" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :住所 %><br />
-    <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :自己紹介 %><br />
-    <%= f.text_area :infomation, autofocus: true, autocomplete: "infomation" %>
-  </div>
-
-    <div class="field">
-    <%= f.label :スカイプ名 %><br />
-    <%= f.text_field :skype, autofocus: true, autocomplete: "skype" %>
-  </div>
-
-  <%= f.fields_for :trainer do |f| %>
-  <div class="field">
-    <%= f.label :＊資格 %><br />
-    <%= f.text_field :license, autofocus: true, autocomplete: "license" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :＊経験年数 %><br />
-    <%= f.text_field :experience, autofocus: true, autocomplete: "experience" %>年
-  </div>
-
-  <div class="field">
-    <%= f.label :＊所属先（所属がない場合は、「なし」と記入してください。） %><br />
-    <%= f.text_field :belongs, autofocus: true, autocomplete: "belongs" %>
-  </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :＊パスワード %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :＊パスワード（確認用） %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "会員登録" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+          <!-- Form -->
+          <form>
+            <div>
+              <%= f.text_field :name, autofocus: true, placeholder: '山田 太郎',class:'fadeIn second session-input', id: "input"  %>
+            </div>
+            <div>
+              <%= f.date_field :birthday, autofocus: true, class:'fadeIn second session-input', id: "input" %>
+            </div>
+            <div>
+              <%= f.label :男 %>
+              <%= f.radio_button :sex, :男 ,class:'fadeIn second session-input', id: "input"%>
+              <%= f.label :女 %>
+              <%= f.radio_button :sex, :女,class:'fadeIn second session-input', id: "input" %>
+              <%= f.label :その他 %>
+              <%= f.radio_button :sex, :その他,class:'fadeIn second session-input', id: "input" %>
+            </div>
+            <div>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス',class:'fadeIn second session-input', id: "input" %>
+            </div>
+            <div>
+              <%= f.telephone_field :tel, autofocus: true, autocomplete: "tel", placeholder: '電話番号',class:'fadeIn second session-input', id: "input" %>
+            </div>
+            <%= f.fields_for :trainer do |f| %>
+              <div>
+                <%= f.text_field :license, autofocus: true, autocomplete: "license",placeholder: '資格' ,class:'fadeIn third session-input' %>
+              </div>
+              <div>
+                <%= f.text_field :experience, autofocus: true, placeholder: '指導経験年数', autocomplete: "experience",class:'fadeIn third session-input' %>年
+              </div>
+              <div>
+                <%= f.text_field :belongs, autofocus: true, autocomplete: "belongs", placeholder: '所属先',class:'fadeIn third session-input' %>
+              </div>
+            <% end %>
+            <div>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> 文字以上)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード',class:'fadeIn third session-input'%>
+            </div>
+            <div>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'パスワード(確認用)',class:'fadeIn third session-input' %>
+            </div>
+            <div class="fadeIn fourth">
+            <%= f.submit "会員登録", class:'session-button' %>
+            </div>
+          </form>
+          <div id="session-formFooter", class="session-link">
+            <%= render "devise/shared/links" %>
+          </div>
+      <% end %>
+        </div>
+      </div>
+    </div>
+</body>
