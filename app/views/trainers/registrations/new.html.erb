@@ -26,24 +26,24 @@
           <!-- Form -->
           <form>
             <div>
-              <%= f.text_field :name, autofocus: true, placeholder: '山田 太郎',class:'fadeIn second session-input', id: "input"  %>
+              <%= f.text_field :name, autofocus: true, placeholder: '山田 太郎',class:'fadeIn second session-input'  %>
             </div>
             <div>
-              <%= f.date_field :birthday, autofocus: true, class:'fadeIn second session-input', id: "input" %>
+              <%= f.date_field :birthday, autofocus: true, class:'fadeIn second session-input' %>
             </div>
             <div>
               <%= f.label :男 %>
-              <%= f.radio_button :sex, :男 ,class:'fadeIn second session-input', id: "input"%>
+              <%= f.radio_button :sex, :男 ,class:'fadeIn second session-input'%>
               <%= f.label :女 %>
-              <%= f.radio_button :sex, :女,class:'fadeIn second session-input', id: "input" %>
+              <%= f.radio_button :sex, :女,class:'fadeIn second session-input' %>
               <%= f.label :その他 %>
-              <%= f.radio_button :sex, :その他,class:'fadeIn second session-input', id: "input" %>
+              <%= f.radio_button :sex, :その他,class:'fadeIn second session-input' %>
             </div>
             <div>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス',class:'fadeIn second session-input', id: "input" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス',class:'fadeIn second session-input' %>
             </div>
             <div>
-              <%= f.telephone_field :tel, autofocus: true, autocomplete: "tel", placeholder: '電話番号',class:'fadeIn second session-input', id: "input" %>
+              <%= f.telephone_field :tel, autofocus: true, autocomplete: "tel", placeholder: '電話番号',class:'fadeIn second session-input' %>
             </div>
             <%= f.fields_for :trainer do |f| %>
               <div>

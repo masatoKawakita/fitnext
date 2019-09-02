@@ -1,32 +1,62 @@
-<h1 class="text-center">トレーナー一覧</h1>
-<p><%= notice %></p>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<%# <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> %>
 
-<% @users.each do |user| %>
-<div class="mx-auto">
-  <div class="card mb-3">
-    <div class="row no-gutters" style="margin-bottom: 20px;">
-      <div class="col-md-4 picture_field", style="margin-top: 20px;">
-        <% if user.picture_url %>
-        <%= image_tag user.picture.url %>
-        <% end %>
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title"><%= user.name %>トレーナー</h5>
-          <p class="card-text">
-          資格：<%= user.trainer.license %>
-          </p>
-          <p class="card-text">
-          経験：<%= user.trainer.experience %>年
-          </p>
-          <p class="card-text">
-          所属：<%= user.trainer.belongs %>
-          </p>
-          <p>自己紹介：<%= user.infomation %></p>
-          <p><%= link_to '詳細ページ', user_path(user) %></p>
+<%# <h1 class="text-center"><span>トレーナー一覧</span></h1> %>
+<div>
+<%= image_tag ('/FitNext-logo.png') , class:"trainer-index-container" %>
+</div>
+<div class="trainer-index-mask-container">
+</div>
+<section class="index-section">
+  <section>
+		<div class="col-md-10">
+    	<div class="card profile-card-3">
+    	  <div class="background-block">
+    		  <%# <img src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="profile-sample1" class="background"/> %>
+          <%# <%= image_tag ('images/fitness-running.png') , class:"background" %>
+          <%# , :alt => 'profile-sample1' %>
+    		</div>
+    		<div class="profile-thumb-block">
+    		  <%# <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="profile-image" class="profile"/> %>
+          <%= image_tag ('images/masato-face.png') , class:"profile" %>, :alt => 'profile-image'
+    		</div>
+    		<div class="card-content">
+          <h2>川北 雅冬<small>FItNext代表</small></h2>
+          <h3>この画面では、FitNextに登録されているトレーナーついて知ることができます。</br>きっとあなたにぴったりの指導者がいるはずです。</br>毎日運動して、健康寿命を伸ばしましょう。</h3>
+          <%# <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div> %>
         </div>
       </div>
+        <h1 class="mt-3 w-100 float-left text-center"><strong>FitNextトレーナー一覧</strong></h1>
     </div>
-  </div>
-</div>
-<% end %>
+</section>
+
+  <% @users.each do |user| %>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 mt-6">
+              <div class="card profile-card-5">
+                <div class="card-img-block">
+                  <% if user.picture_url %>
+                  <%= image_tag user.picture.url, class:"card-img-top picture_field img", alt:"Card image cap"%>
+                  <% end %>
+                </div>
+                  <div class="card-body pt-0">
+                    <h5 class="card-title trainer-card-title"><%= user.name %>トレーナー</h5>
+                    <p class="card-text">
+                    資格：<%= user.trainer.license %> | 経験：<%= user.trainer.experience %>年 | 所属：<%= user.trainer.belongs %>
+                    </p>
+                    <p class ="card-text">
+                    自己紹介：<%= user.infomation %>
+                    </p>
+                    <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+                    <%= link_to '詳細ページ', user_path(user), class:"btn btn-primary" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  <% end %>
+</section>

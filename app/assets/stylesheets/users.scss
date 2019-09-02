@@ -9,3 +9,61 @@
   border-radius: 50%;
   object-fit: cover;
 }
+
+// ユーザー・トレーナー詳細
+
+
+.user-card {
+  margin: 30px auto;
+  width: 350px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+}
+.user-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.user-card-content {
+  padding: 20px;
+}
+
+.user-card-content2 {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #232323;
+  background: #fff8e8;
+  border-right: solid 10px #ffc06e;
+  font-size: 1.5rem;
+}
+.user-card-title {
+  font-size: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333;
+}
+.user-card-text {
+
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #232323;
+  background: #fff8e8;
+  border-left: solid 10px #ffc06e;
+  font-size: 1.5rem;
+}
+.user-card-link {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 20px;
+  font-size: 20px;
+}
+.user-card-link a {
+  text-decoration: none;
+  color: #0bd;
+  margin: 0 10px;
+}
+.user-card-link a:hover {
+  color: #0090aa;
+}

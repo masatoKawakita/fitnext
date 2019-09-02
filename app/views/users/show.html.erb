@@ -1,94 +1,56 @@
+<head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
 
-
-<h1><%= @user.name %>のページ</h1>
 <%if current_user.id == @user.id %>
   <%= link_to 'プロフィールを編集する', edit_user_path(@user.id) %>
 <% end %>
 
-  <body>
-    <div>
-      <span>氏名: <%= @user.name %></span>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10">
+      <div class ="row">
+        <section class="user-card col-md-10">
+          <%# <img class="user-card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt=""> %>
+          <div class="user-card-img">
+            <% if @user.picture_url %>
+            <%= image_tag @user.picture.url %>
+            <% end %>
+          </div>
+            <div class="user-card-content">
+              <h1 class="user-card-title"><%= @user.name %></h1>
+              <h3 class="text-center">基本情報</h3>
+              <p class="user-card-text">
+                <span>性別: <%= @user.sex %></span></br>
+                <span>生年月日: <%= @user.birthday %></span></br>
+                <span>Skype名: <%= @user.skype %></span></br>
+                <span>自己紹介: <%= @user.infomation %></span></br>
+                <span>Skype名: <%= @user.skype %></span></br>
+                  <% if @user.trainer.blank? %>
+                    <span>メールアドレス: <%= @user.email %></span></br>
+                    <span>電話番号: <%= @user.tel %></span></br>
+                    <span>住所: <%= @user.address %></span></br>
+                  <% end %>
+                  <% unless @user.trainer.blank? %>
+                    <span>資格：<%= @user.trainer.license %></span></br>
+                    <span>経験年数：<%= @user.trainer.experience %>年</span></br>
+                    <span>所属先：<%= @user.trainer.belongs %></span></br>
+                  <% end %>
+              </p>
+              <h3 class="text-center">自己紹介</h3>
+              <div class="user-card-content2">
+                <span><%= @user.infomation %></span>
+              </div>
+            </div>
+              <div class="user-card-link">
+                <a href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1567423278&rver=7.1.6819.0&wp=MBI_SSL&wreply=https%3A%2F%2Flw.skype.com%2Flogin%2Foauth%2Fproxy%3Fclient_id%3D572381%26redirect_uri%3Dhttps%253A%252F%252Fweb.skype.com%252FAuth%252FPostHandler%26state%3D2383ec72-933d-42d4-b176-dfc30bc9400b%26site_name%3Dlw.skype.com&lc=1033&id=293290&mkt=ja-JP&psi=skype&lw=1&cobrandid=2befc4b5-19e3-46e8-8347-77317a16a5a5&client_flight=ReservedFlight33%2CReservedFlight67" target="_blank">相談する</a>
+              </div>
+            </div>
+        </section>
+      </div>
     </div>
-
-    <div>
-      <span>生年月日: <%= @user.birthday %></span>
-    </div>
-
-    <div>
-      <span>性別: <%= @user.sex %></span>
-    </div>
-
-  <% if @user.trainer.blank? %>
-    <div>
-      <span>メールアドレス: <%= @user.email %></span>
-    </div>
-
-    <div>
-      <span>電話番号: <%= @user.tel %></span>
-    </div>
-
-    <div>
-      <span>住所: <%= @user.address %></span>
-    </div>
-  <% end %>
-
-    <div class="picture_field">
-      <span>顔写真: </span>
-      <% if @user.picture_url %>
-      <%= image_tag @user.picture.url %>
-      <% end %>
-    </div>
-
-    <div>
-      <span>自己紹介: <%= @user.infomation %></span>
-    </div>
-
-    <div></div>
-      <span>Skype名: <%= @user.skype %></span>
-    </div>
-
-  <% unless @user.trainer.blank? %>
-    <div>
-      <span>資格：<%= @user.trainer.license %></span>
-    </div>
-
-    <div>
-      <span>経験年数：<%= @user.trainer.experience %>年</span>
-    </div>
-
-    <div>
-      <span>所属先：<%= @user.trainer.belongs %></span>
-    </div>
-
-<h3>評価</h3>
-  <% @trainer.trainer_evaluations.each do |trainer_evaluation| %>
-    <div>
-      <span>「楽しさ」：<%= trainer_evaluation.fun_rate %></span>
-    </div>
-    <div>
-      <span>「わかりやすさ」：<%= trainer_evaluation.understandable_rate %></span>
-    </div>
-    <div>
-      <span>「丁寧さ」：<%= trainer_evaluation.politeness_rate %></span>
-    </div>
-    <div>
-      <span>「優しさ」：<%= trainer_evaluation.kindness_rate %></span>
-    </div>
-    <div>
-      <span>「熱心さ」：<%= trainer_evaluation.passion_rate %></span>
-    </div>
-    <div>
-      <span>「自由記述」：<%= trainer_evaluation.content %></span>
-    </div>
-  <% end %>
-  <% end %>
-
-  <% if @user.trainer.present? %>
-    <li><%= link_to '評価する', new_user_trainer_evaluation_path(user_id: @user, trainer_id: @user.trainer) %></li>
-  <% end %>
-
-  <% if @user.try(:admin?) && ! (@user.id == @user) %>
-    <h1>管理者ページ<h3>
-    <%= link_to '管理者ページ', "/admin" %>
-  <% end %>
-
+  </div>
+</div>
