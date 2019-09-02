@@ -228,6 +228,11 @@ h1.logo {
   font-family: 'Raleway', sans-serif;
   color: inherit;
   font-weight: bold;
+  letter-spacing: 1rem;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #header .secondary-slogan{
@@ -235,6 +240,10 @@ h1.logo {
   color: inherit;
   line-height: 1em;
   font-family: 'Raleway', sans-serif;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #header > .bottom {
