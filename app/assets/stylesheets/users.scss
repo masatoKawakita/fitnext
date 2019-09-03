@@ -62,8 +62,23 @@
 .user-card-link a {
   text-decoration: none;
   color: #0bd;
-  margin: 0 10px;
+  // margin: 0 10px;
 }
 .user-card-link a:hover {
   color: #0090aa;
+}
+
+.btn-gradient-radius-user {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  transition: .4s;
+  // margin-left: 39%;
+}
+
+.btn-gradient-radius-user:hover {
+  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }
