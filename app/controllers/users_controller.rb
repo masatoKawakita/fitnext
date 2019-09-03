@@ -16,7 +16,7 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
       if @user == me_trainer
         # 自分がトレーナであり、ユーザーshowが自分のページであったら何もしない
       else
-        redirect_to :root, notice: "URLが不正です。"
+        redirect_to :root, notice: "ユーザー（トレーナーを除く）のみが閲覧できます"
       end
     else
       @user = User.find_by(id: params[:id])
