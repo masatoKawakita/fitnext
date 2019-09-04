@@ -1,76 +1,54 @@
-<h1>プロフィール編集画面</h1>
+<head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
 
-  <%= form_with(model: @user,url: user_path(users_id: @user),local: true) do |f| %>
-
-  <div class="field">
-    <%= f.label :氏名 %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+<%= form_with(model: @user,url: user_path(users_id: @user),local: true) do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class ="row">
+        <section class="user-card col-md-12">
+          <%# <img class="user-card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt=""> %>
+          <div class="user-card-img">
+            <% if current_user.persisted? && current_user.picture? %>
+              <%= image_tag current_user.picture.to_s %>
+              <small><%= f.check_box :remove_picture %> 画像を削除</small>
+            <% end %>
+            <%= f.file_field :picture %>
+          </div>
+            <div class="user-card-content">
+              <h1 class="user-card-title"><small><%= f.label :氏名 %></small><%= f.text_field :name, autofocus: true, autocomplete: "name" %></h1>
+              <h3 class="text-center">基本情報</h3>
+              <p class="user-card-text">
+                <span class="blank-content">メールアドレス:<%= f.email_field :email, autofocus: true, autocomplete: "email" %></span></br>
+                <span class="blank-content">電話番号(ハイフン有り):<%= f.telephone_field :tel, autofocus: true, autocomplete: "tel" %></span></br>
+                <span class="blank-content">住所:<%= f.text_field :address, autofocus: true, autocomplete: "address" %></span></br>
+                <span class="blank-content">Skype名:<%= f.text_field :skype, autofocus: true, autocomplete: "skype" %></span></br>
+              <%= f.fields_for :trainer do |f| %>
+                <span class="blank-content">資格：<%= f.text_field :license, autofocus: true, autocomplete: "license" %></span></br>
+                <span class="blank-content">経験年数：<%= f.text_field :experience, autofocus: true, autocomplete: "experience" %>年</span></br>
+                <span class="blank-content">所属先：<%= f.text_field :belongs, autofocus: true, autocomplete: "belongs" %></span></br>
+              <% end %>
+              </p>
+              <h3 class="text-center">自己紹介</h3>
+              <div class="user-card-content2">
+                <span class="blank-content"><%= f.text_area :infomation, autofocus: true, autocomplete: "infomation" %></br></span>
+              </div>
+            </div>
+              <div class="user-card-link">
+                <div class="actions">
+                  <%= f.submit "更新する", class:"btn-gradient-radius-user user-edit-submit" %>
+                  <%= link_to 'パスワードを編集する', edit_user_registration_path , class:"btn-gradient-radius-user"%>
+                  <%= button_to "アカウントを削除", data: { confirm: "本当に削除しますか?" }, method: :delete %>
+                </div>
+              </div>
+            </div>
+        </section>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :電話番号（ハイフン有り） %><br />
-    <%= f.telephone_field :tel, autofocus: true, autocomplete: "tel" %>
-  </div>
-
-  <div class="picture_field">
-    <%= f.label :顔写真 %><br />
-    <% if current_user.persisted? && current_user.picture? %>
-      <%= image_tag current_user.picture.to_s %>
-      <label><%= f.check_box :remove_picture %> 画像を削除</label>
-    <% end %>
-      <%= f.file_field :picture %>
-  </div>
-
-  <div class="field">
-    <%= f.label :住所 %><br />
-    <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :自己紹介 %><br />
-    <%= f.text_area :infomation, autofocus: true, autocomplete: "infomation" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :スカイプ名 %><br />
-    <%= f.text_field :skype, autofocus: true, autocomplete: "skype" %>
-  </div>
-
-  <%= f.fields_for :trainer do |f| %>
-  <div class="field">
-    <%= f.label :＊資格 %><br />
-    <%= f.text_field :license, autofocus: true, autocomplete: "license" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :＊経験年数 %><br />
-    <%= f.text_field :experience, autofocus: true, autocomplete: "experience" %>年
-  </div>
-
-  <div class="field">
-    <%= f.label :＊所属先（所属がない場合は、「なし」と記入してください。） %><br />
-    <%= f.text_field :belongs, autofocus: true, autocomplete: "belongs" %>
-  </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "更新する" %>
-  </div>
+</div>
 <% end %>
-
-
-
-
-
-
-<%= link_to 'パスワードを編集する', edit_user_registration_path %>
-
-<h3>アカウントを削除する</h3>
-<p><%= button_to "アカウントを削除", data: { confirm: "本当に削除しますか?" }, method: :delete %></p>
-
-

@@ -82,3 +82,23 @@
 .btn-gradient-radius-user:hover {
   background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }
+
+// ユーザー編集画面
+
+// .blank-content{
+//   width:80%;
+// }
+
+// MEMO:たの入力項目への影響
+#user_infomation{
+  width: 80%;
+  margin-left: 10%;
+  height: 150px;
+}
+
+.user-edit-submit{
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 20px;
+  font-size: 20px;
+}
