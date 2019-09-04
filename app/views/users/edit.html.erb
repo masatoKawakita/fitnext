@@ -40,9 +40,9 @@
             </div>
               <div class="user-card-link">
                 <div class="actions">
-                  <%= f.submit "更新する", class:"btn-gradient-radius-user user-edit-submit" %>
+                  <%= f.submit "更新する" %>
                   <%= link_to 'パスワードを編集する', edit_user_registration_path , class:"btn-gradient-radius-user"%>
-                  <%= button_to "アカウントを削除", data: { confirm: "本当に削除しますか?" }, method: :delete %>
+                  <%= button_to "退会する", root_path(@user.id), data: { confirm: "本当に退会しますか?" }, method: :delete %>
                 </div>
               </div>
             </div>

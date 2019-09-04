@@ -55,3 +55,25 @@
       </div>
   <% end %>
   </body>
+
+  ---------------------------
+<%= form_for(@trainer_evaluation) do |f| %>
+  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :trainer_id %>
+
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th>評価項目</th>
+        <th>５段階評価</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><%= f.label :fun_rate, '楽しさ'%></td><td class="text-nowrap"><%= f.hidden_field :fun_rate, id: :trainer_evaluation_fun_rate %></td></tr>
+      <tr><td>わかりやすさ</td><td>48時間のスタンダードコースです。48時間のスタンダードコースです。</td></tr>
+      <tr><td>丁寧さ</td><td>80時間のプロフェッショナルコースです。80時間のプロフェッショナルコースです</td></tr>
+      <tr><td>優しさ</td><td>単発の完全マンツーマンレッスンです。単発の完全マンツーマンレッスンです</td></tr>
+      <tr><td>熱心さ</td><td>お客様先で行う出張研修・コンサルティングです。お客様先で行う出張研修・コンサルティングです</td></tr>
+    </tbody>
+  </table>
+<% end %>

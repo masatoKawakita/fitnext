@@ -35,17 +35,21 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
   end
 
   def update
-    if @user.id == current_user.id
+    # if @user.id == current_user.id
       if @user.update(user_params)
         redirect_to user_path(current_user.id), notice: "情報を更新しました"
       else
-        render "new", alert: "更新に失敗しました"
+        render "edit", alert: "更新に失敗しました"
       end
-    end
+    
   end
 
   def destroy
+      @user.destroy
+      redirect_to root_path, notice:"アカウントを削除しました。ご利用頂きまして、ありがとうございました。"
   end
+      # set_user.destroy
+    # redirect_to user_path
 
 private
 

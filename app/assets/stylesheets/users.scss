@@ -70,17 +70,20 @@
 
 .btn-gradient-radius-user {
   display: inline-block;
-  padding: 7px 20px;
-  border-radius: 25px;
+  padding: 15px 80px;
+  border-radius: 5px;
   text-decoration: none;
   color: #FFF;
-  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  // background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+  background-color: #56baed;
   transition: .4s;
-  // margin-left: 39%;
+  margin-bottom: 20px;
+  width: 80%;
 }
 
 .btn-gradient-radius-user:hover {
-  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+  // background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }
 
 // ユーザー編集画面
@@ -90,7 +93,7 @@
   // margin-left: 10%;
 }
 
-// MEMO:たの入力項目への影響
+
 #user_infomation{
   width: 80%;
   margin-left: 10%;
