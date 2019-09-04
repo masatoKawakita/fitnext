@@ -23,19 +23,19 @@
               <h1 class="user-card-title"><small><%= f.label :氏名 %></small><%= f.text_field :name, autofocus: true, autocomplete: "name" %></h1>
               <h3 class="text-center">基本情報</h3>
               <p class="user-card-text">
-                <span class="blank-content">メールアドレス:<%= f.email_field :email, autofocus: true, autocomplete: "email" %></span></br>
-                <span class="blank-content">電話番号(ハイフン有り):<%= f.telephone_field :tel, autofocus: true, autocomplete: "tel" %></span></br>
-                <span class="blank-content">住所:<%= f.text_field :address, autofocus: true, autocomplete: "address" %></span></br>
-                <span class="blank-content">Skype名:<%= f.text_field :skype, autofocus: true, autocomplete: "skype" %></span></br>
+                <span>メールアドレス:<%= f.email_field :email, autofocus: true, autocomplete: "email",class:"blank-content" %></span></br>
+                <span>電話番号(ハイフン有り):<%= f.telephone_field :tel, autofocus: true, autocomplete: "tel",class:"blank-content"  %></span></br>
+                <span>住所:<%= f.text_field :address, autofocus: true, autocomplete: "address",class:"blank-content"  %></span></br>
+                <span>Skype名:<%= f.text_field :skype, autofocus: true, autocomplete: "skype",class:"blank-content"  %></span></br>
               <%= f.fields_for :trainer do |f| %>
-                <span class="blank-content">資格：<%= f.text_field :license, autofocus: true, autocomplete: "license" %></span></br>
-                <span class="blank-content">経験年数：<%= f.text_field :experience, autofocus: true, autocomplete: "experience" %>年</span></br>
-                <span class="blank-content">所属先：<%= f.text_field :belongs, autofocus: true, autocomplete: "belongs" %></span></br>
+                <span>資格：<%= f.text_field :license, autofocus: true, autocomplete: "license",class:"blank-content"  %></span></br>
+                <span>経験年数：<%= f.text_field :experience, autofocus: true, autocomplete: "experience",class:"blank-content"  %>年</span></br>
+                <span>所属先：<%= f.text_field :belongs, autofocus: true, autocomplete: "belongs",class:"blank-content"  %></span></br>
               <% end %>
               </p>
               <h3 class="text-center">自己紹介</h3>
               <div class="user-card-content2">
-                <span class="blank-content"><%= f.text_area :infomation, autofocus: true, autocomplete: "infomation" %></br></span>
+                <span><%= f.text_area :infomation, autofocus: true, autocomplete: "infomation" %></br></span>
               </div>
             </div>
               <div class="user-card-link">
