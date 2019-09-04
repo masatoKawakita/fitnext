@@ -15,10 +15,11 @@
 
 .user-card {
   margin: 30px auto;
-  width: 350px;
+  // width: 350px;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px #ccc;
+  top:80px;
 }
 .user-card img {
   width: 150px;
@@ -28,6 +29,7 @@
 }
 .user-card-content {
   padding: 20px;
+  word-wrap:break-word;
 }
 
 .user-card-content2 {
@@ -37,6 +39,7 @@
   background: #fff8e8;
   border-right: solid 10px #ffc06e;
   font-size: 1.5rem;
+  word-wrap:break-word;
 }
 .user-card-title {
   font-size: 30px;
@@ -90,7 +93,8 @@
 
 .blank-content{
   width:100%;
-  // margin-left: 10%;
+  // word-break:break-all;
+  // white-space: pre;
 }
 
 

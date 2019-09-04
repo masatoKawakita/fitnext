@@ -1,3 +1,4 @@
+
 <h2>編集画面 <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -33,4 +34,3 @@
 
 <h3>アカウントを削除する</h3>
 <p><%= button_to "アカウントを削除", registration_path(resource_name), data: { confirm: "本当に削除しますか?" }, method: :delete %></p>
-

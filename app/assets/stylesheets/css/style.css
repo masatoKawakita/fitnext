@@ -78,6 +78,10 @@ a:hover {
   color: #4290ae; 
 }
 
+.logo-mini{
+  color: red;
+}
+
 
 h1, h2, h3, h4, h5, h6{   
   margin: 0 0 15px 0; 
@@ -169,8 +173,8 @@ header.top-header {
 
 h1.logo {
   margin-top: 11px;
-  color: white;
   display: inline-flex;
+  font-family: inherit;
 }
 #header{  
   position: relative;     

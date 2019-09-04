@@ -1,14 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html class="noIE" lang="en-US">
   <head>
     <title>FitNext Fitness×NextStage</title>
       <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
-
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= notice %>
+      <%= alert %>
   </head>
-  <body>
+	<body>
+  <header class="top-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-xs-5 col-sm-4 header-logo">
+						<br>
+						<a>
+							<h1 class="logo">FitNext</h1>
+              <a class="logo-mini">Fitness×NextStage</a>
+						</a>
+					</div>
+					<div class="col-md-8 col-md-offset-1 col-xs-7">
+						<nav class="navbar navbar-default">
+						  	<div class="container-fluid nav-bar">
+						    <!-- Brand and toggle get grouped for better mobile display -->
+							    <div class="navbar-header">
+							      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								        <span class="sr-only">Toggle navigation</span>
+								        <span class="icon-bar"></span>
+								        <span class="icon-bar"></span>
+								        <span class="icon-bar"></span>
+							      	</button>
+							    </div>
+						    	<!-- Collect the nav links, forms, and other content for toggling -->
+							    <div class="collapse navbar-collapse navbar-def" id="bs-example-navbar-collapse-1">
+							      	<ul class="nav navbar-nav navbar-right">
+                        <% if user_signed_in? %>
+                          <%= link_to 'トップページ', homes_show_path %>
+													<%= link_to 'トレーナー一覧', users_path %>
+                          <a href="/users/<%= current_user.id %>">マイページ</a>
+                          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+                        <% else %>
+                          <%= link_to '会員登録', new_user_registration_path %>
+                          <%= link_to 'トレーナー登録',  new_trainer_path %>
+                          <%= link_to 'ログイン', new_user_session_path %>
+													<%= link_to 'トレーナー一覧', users_path %>
+                        <% end %>
+							      	</ul>
+                          <p class="notice"><%= notice %></p>
+                          <p class="alert"><%= alert %></p>
+							    </div><!-- /navbar-collapse -->
+						  	</div><!-- / .container-fluid -->
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
     <%= yield %>
   </body>
 </html>
