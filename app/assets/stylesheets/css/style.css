@@ -78,6 +78,10 @@ a:hover {
   color: #4290ae; 
 }
 
+.logo a{
+  color: black;
+}
+
 .logo-mini{
   color: red;
 }
@@ -160,6 +164,16 @@ header.top-header {
   /* border-color: #e7e7e7; */
   margin-bottom: 10px;
   transition: all .6s;
+}
+
+.nav a{
+  color: black;
+  font-size: 1.4rem;
+}
+
+.nav a:hover{
+  color:#DA8E00;
+  text-decoration: inherit;
 }
 .shows .navbar-nav {
   float: right;
