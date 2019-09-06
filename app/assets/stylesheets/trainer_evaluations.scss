@@ -2,14 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// .table{
-//   width:80%;
-//   top:80%;
-// }
-
-// .trainer-evaluations-body{
-//   width: 80%;
-// }
 
 .trainer-evaluations-table{
   padding-top:25%;
@@ -18,3 +10,17 @@
 .trainer-evaluations-button{
   text-align:center;
 }
+
+
+
+.trainer-evaluations-container{
+  padding-top:10%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.btn btn-success:hover{
+  background-color:white !important;
+  border-color:white !important;
+}
+// FIXME:評価投稿ボタン　hover時の色を変えたい

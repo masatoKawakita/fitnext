@@ -586,6 +586,14 @@ ol.carousel-indicators {
     color:    white;
 }
 
+#cfsubmit{
+  padding: 9px 0;
+  background: #db5252;
+  border: none;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+}
 
 /*////////////////////////////////////////////////////////////////////////
 //  10 - Footer

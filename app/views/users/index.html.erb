@@ -47,7 +47,7 @@
                     自己紹介：<%= user.infomation %>
                     </p>
                     <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
-                    <% if user_signed_in? %>
+                    <% if user_signed_in? && user.trainer.presence %>
                       <%= link_to '詳細ページ', user_path(user), class:"btn btn-primary" %>
                     <% end %>
                   </div>
