@@ -1,3 +1,5 @@
+
+
 <div class ="trainer-evaluations-table col-md-12">
   <table class="table">
       <tr>
@@ -5,7 +7,7 @@
         <th>５段階評価</th>
       </tr>
       <%= form_for(@trainer_evaluation) do |f| %>
-        <%= f.hidden_field :user_id %>
+        <%# <%= f.hidden_field :user_id %>
         <%= f.hidden_field :trainer_id %>
 
           <tr id='star_rank1'>
@@ -18,29 +20,28 @@
           <tr id='star_rank2'>
             <td>
               <%= f.label :understandable_rate, 'わかりやすさ'%>
-              <%= f.hidden_field :understandable_rate, id: :trainer_evaluations_understandable_rate %>
+              <%= f.hidden_field :understandable_rate, id: :trainer_evaluation_understandable_rate %>
             </td>
           </tr>
-
 
           <tr id='star_rank3'>
             <td>
               <%= f.label :politeness_rate, 'ていねいさ'%>
-              <%= f.hidden_field :politeness_rate, id: :trainer_evaluations_politeness_rate %>
+              <%= f.hidden_field :politeness_rate, id: :trainer_evaluation_politeness_rate %>
             </td>
           </tr>
 
           <tr id='star_rank4'>
             <td>
             <%= f.label :kindness_rate,'優しさ'%>
-            <%= f.hidden_field :kindness_rate, id: :trainer_evaluations_kindness_rate %>
+            <%= f.hidden_field :kindness_rate, id: :trainer_evaluation_kindness_rate %>
             </td>
           </tr>
 
         <tr id='star_rank5'>
             <td>
             <%= f.label :passion_rate,'熱心さ'%>
-            <%= f.hidden_field :passion_rate, id: :trainer_evaluations_passion_rate %>
+            <%= f.hidden_field :passion_rate, id: :trainer_evaluation_passion_rate %>
             </td>
           </tr>
   </table>

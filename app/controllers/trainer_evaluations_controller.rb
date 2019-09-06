@@ -11,6 +11,7 @@ class TrainerEvaluationsController < ApplicationController
   def create
     @trainer_evaluation = TrainerEvaluation.new(trainer_evaluation_params)
     # @trainer_evaluation = current_user.trainer_evaluations.build(trainer_evaluation_params)
+    @trainer_evaluation.user_id = current_user.id
     if @trainer_evaluation.save
       redirect_to users_path , notice:"評価を送信しました。ご協力ありがとうございました。"
     else
@@ -35,7 +36,7 @@ class TrainerEvaluationsController < ApplicationController
       :kindness_rate,
       :passion_rate,
       :content,
-      :user_id,
+      # :user_id,
       :trainer_id
     )
   end

@@ -52,6 +52,7 @@
 </div>
 
 
+
 <div class="trainer-evaluations-container">
   <div class="row">
     <div class="col-md-12">
@@ -65,27 +66,24 @@
           <article class="row">
             <div class="col-md-2 col-sm-2 hidden-xs">
               <figure class="thumbnail">
-              <%# <div class="user-card-img"> %>
-                <% if @user.picture_url %>
-                <%= image_tag @user.picture.url, class:"img-responsive"%>
+                <% if trainer_evaluation.user.picture_url %>
+                <%= image_tag trainer_evaluation.user.picture.url, class:"img-responsive-user"%>
                 <% end %>
-                <%# FIXME:投稿者の写真を表示 %>
-              <%# </div> %>
-                <%# <img class="img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" /> %>
-                <figcaption class="text-center"><%= @user.name %></figcaption>
-                <%# FIXME:投稿者の名前を表示 %>
+                <%# FIXME:画像大きさ統一 %>
+                <figcaption class="text-center"><%= trainer_evaluation.user.name %></figcaption>
               </figure>
             </div>
             <div class="col-md-10 col-sm-10">
               <div class="panel panel-default arrow left">
                 <div class="panel-body">
                   <header class="text-left">
-                    <div class="comment-user"><i class="fa fa-user"></i><%= @user.name %></div>
+                    <div class="comment-user"><i class="fa fa-user"></i><%= trainer_evaluation.user.name %></div>
                     <%# FIXME:投稿者の名前を表示 %>
                     <%# <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> Dec 16, 2014</time> %>
                   </header>
                   <div class="comment-post">
                     <p>
+                      <%# 「user_id」：<%= trainer_evaluation.user.name %>
                       「楽しさ」：<%= trainer_evaluation.fun_rate %><br />
                       「わかりやすさ」：<%= trainer_evaluation.understandable_rate %><br />
                       「丁寧さ」：<%= trainer_evaluation.politeness_rate %><br />
