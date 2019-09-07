@@ -42,5 +42,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 end
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
