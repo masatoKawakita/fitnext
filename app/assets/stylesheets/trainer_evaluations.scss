@@ -5,6 +5,8 @@
 
 .trainer-evaluations-table{
   padding-top:25%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .trainer-evaluations-button{
@@ -32,3 +34,37 @@
   object-fit: cover;
 }
 
+#trainer_evaluation_fun_rate{
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#trainer_evaluation_understandable_rate{
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#trainer_evaluation_politeness_rate{
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#trainer_evaluation_kindness_rate{
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#trainer_evaluation_passion_rate{
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  font-size: 2rem;
+}

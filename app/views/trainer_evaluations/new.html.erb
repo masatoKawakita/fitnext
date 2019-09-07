@@ -1,51 +1,63 @@
 
 
-<div class ="trainer-evaluations-table col-md-12">
+<div class ="trainer-evaluations-table col-md-8 text-center">
   <table class="table">
       <tr>
-        <th>評価項目</th>
-        <th>５段階評価</th>
+        <th class="text-center">評価項目</th>
+        <th class="text-center">５段階評価(１〜５の数字を一つずつお選びください）</th>
       </tr>
       <%= form_for(@trainer_evaluation) do |f| %>
         <%# <%= f.hidden_field :user_id %>
         <%= f.hidden_field :trainer_id %>
 
-          <tr id='star_rank1'>
+          <%# <tr id='star_rank1'> %>
             <td>
               <%= f.label :fun_rate, '楽しさ'%>
-              <%= f.hidden_field :fun_rate, id: :trainer_evaluation_fun_rate %>
+            </td>
+            <td>
+              <%= f.number_field :fun_rate, {min:1, max:5} %>
             </td>
           </tr>
 
-          <tr id='star_rank2'>
+          <%# <tr id='star_rank2'> %>
             <td>
               <%= f.label :understandable_rate, 'わかりやすさ'%>
-              <%= f.hidden_field :understandable_rate, id: :trainer_evaluation_understandable_rate %>
+            </td>
+            <td>
+              <%= f.number_field :understandable_rate,  {min:1, max:5} %>
             </td>
           </tr>
 
-          <tr id='star_rank3'>
+          <%# <tr id='star_rank3'> %>
             <td>
               <%= f.label :politeness_rate, 'ていねいさ'%>
-              <%= f.hidden_field :politeness_rate, id: :trainer_evaluation_politeness_rate %>
+            </td>
+            <td>
+            <%= f.number_field :politeness_rate,  {min:1, max:5}  %>
             </td>
           </tr>
 
-          <tr id='star_rank4'>
+          <%# <tr id='star_rank4'> %>
             <td>
             <%= f.label :kindness_rate,'優しさ'%>
-            <%= f.hidden_field :kindness_rate, id: :trainer_evaluation_kindness_rate %>
+            </td>
+            <td>
+            <%= f.number_field :kindness_rate,  {min:1, max:5}  %>
             </td>
           </tr>
 
-        <tr id='star_rank5'>
+        <%# <tr id='star_rank5'> %>
             <td>
             <%= f.label :passion_rate,'熱心さ'%>
-            <%= f.hidden_field :passion_rate, id: :trainer_evaluation_passion_rate %>
+            </td>
+            <td>
+            <%= f.number_field :passion_rate,  {min:1, max:5}  %>
             </td>
           </tr>
   </table>
-        <div>
+</div>
+
+        <div class="col-md-12">
           <%= f.label :content, '評価（自由記述）'%>
           <%= f.text_area :content, class: "form-control", rows: "5",
             placeholder:'皆様の評価が、FitNextのサービス向上に必要です。トレーナーさんから指導された内容やその感想を詳しくお書きください。' %>
@@ -54,6 +66,5 @@
         <div class="trainer-evaluations-button">
           <%= f.submit '投稿する', class:"btn btn-success" %>
         </div>
-      </div>
 <% end %>
-</div>
+
