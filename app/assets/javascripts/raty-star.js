@@ -150,4 +150,4 @@
 //   } else if (string.indexOf('#') == 0) {
 //     return document.getElementById; //=> raty add とかで見た目を変更できるインスタンスinstannsuメソッドがついてる この見た目クラスをDOM 
 //   }
-})
+// })
