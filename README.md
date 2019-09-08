@@ -25,15 +25,19 @@ Rails 5.2.3
   - [ ] 文章による評価
 - [ ] 管理者権限
  
-## カタログ設計
-https://docs.google.com/document/d/1BKqD1_fzYtYqDIhV8YrzngFnDJbPqDJxajjmP7TuZwg/edit?usp=sharing
+## 要件定義書・機能一覧
+https://docs.google.com/document/d/193T2hf8LcGjoUlHihvit2VoKYqvlYT_ni8UH3wDECB4/edit?usp=sharing
+
+## 画面遷移図/ワイヤーフレーム
+https://xd.adobe.com/view/0ee9bcb8-38c0-47b0-458d-fcfddaf57fbd-78d8/grid
+
+## リーンキャンパス
+https://drive.google.com/file/d/1dbFFfxZ3_dKulzEkcpDS8h5fGG3d4TO7/view?usp=sharing
 
 ## テーブル定義
 https://drive.google.com/file/d/1lGH7l5Oh6PWuirqa19-cKN6UnbAfppl-/view?usp=sharing
 https://docs.google.com/spreadsheets/d/1RKPmAWuo09VjIAifspCYi6h34bgQYOxv2-tQ-fnN8a8/edit?usp=sharing
 
-## 画面遷移図/ワイヤーフレーム
-https://docs.google.com/spreadsheets/d/1SOSWPg8iMqqujQIkZ_007D4UyvczAJCpgqrNDWN-UNA/edit?usp=sharing
 
 ## 使用予定Gem
 * devise
