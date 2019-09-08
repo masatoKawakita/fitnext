@@ -1,12 +1,12 @@
 
-
+<%= form_for(@trainer_evaluation) do |f| %>
 <div class ="trainer-evaluations-table col-md-8 text-center">
   <table class="table">
       <tr>
         <th class="text-center">評価項目</th>
         <th class="text-center">５段階評価(１〜５の数字を一つずつお選びください）</th>
       </tr>
-      <%= form_for(@trainer_evaluation) do |f| %>
+
         <%# <%= f.hidden_field :user_id %>
         <%= f.hidden_field :trainer_id %>
 

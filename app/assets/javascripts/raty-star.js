@@ -151,3 +151,22 @@
 //     return document.getElementById; //=> raty add とかで見た目を変更できるインスタンスinstannsuメソッドがついてる この見た目クラスをDOM 
 //   }
 // })
+
+// $(document).on("turbolinks:load", () => {
+//   jQuery(document).ready(function($){
+//       $(window).scroll(function() {
+//         console.log("asdf");
+//       if ($(window).scrollTop() > 100 ){
+//       $('.top-header').addClass('shows');
+//         } else {
+//           $('.top-header').removeClass('shows');
+//       };
+//     });
+//   });
+//   jQuery('.scroll').on('click', function(e){
+//     e.preventDefault()
+//   jQuery('html, body').animate({
+//       scrollTop : jQuery(this.hash).offset().top
+//     }, 1500);
+//   });
+// });
