@@ -72,11 +72,12 @@ private
         :license,
         :experience,
         :belongs,
-        :user_id
+        :user_id,
+        :tag_list
+        # ↑トレーナータグ
       ]
     )
   end
-
 
   def set_user
     @user = User.find(params[:id])
@@ -84,5 +85,7 @@ private
         redirect_to root_path,  alert: '違反行為です! 他のユーザーページにはいけません。'
     end
   end
+
+  
 end
 
