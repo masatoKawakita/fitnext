@@ -41,7 +41,6 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
       else
         render "edit", alert: "更新に失敗しました"
       end
-    
   end
 
   def destroy
@@ -67,14 +66,15 @@ private
       :encrypted_password,
       :picture_cache,
       :remove_picture,
+      :tag_list,
       trainer_attributes: [
         :id,
         :license,
         :experience,
         :belongs,
         :user_id,
-        :tag_list
-        # ↑トレーナータグ
+      #   :tag_list,
+      # # ↑トレーナータグ
       ]
     )
   end
