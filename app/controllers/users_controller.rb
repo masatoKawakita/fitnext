@@ -5,6 +5,9 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
   def index
     @trainer_ids = Trainer.pluck(:user_id)
     @users = User.where(id: @trainer_ids)
+    if params[:tag_name]
+      @users = @users.tagged_with("#{params[:tag_name]}")
+    end
 
     # @users = User.all
   end
