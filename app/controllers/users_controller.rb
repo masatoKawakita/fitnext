@@ -5,7 +5,9 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
   def index
     @trainer_ids = Trainer.pluck(:user_id)
     @users = User.where(id: @trainer_ids)
-
+    if params[:tag_name]
+      @users = @users.tagged_with("#{params[:tag_name]}")
+    end
     # @users = User.all
   end
 
@@ -15,7 +17,7 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
       @user = User.find_by(id: params[:id])
       @trainer = Trainer.find_by(user_id: @user.id)
       if @user == me_trainer
-        # 自分がトレーナであり、ユーザーshowが自分のページであったら何もしない
+        # 自分がトレーナであり、ユーザーshowが自分のページであったら閲覧可能
       else
         redirect_to :root, notice: "ユーザー（トレーナーを除く）のみが閲覧できます"
       end
@@ -41,7 +43,6 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
       else
         render "edit", alert: "更新に失敗しました"
       end
-    
   end
 
   def destroy
@@ -67,16 +68,18 @@ private
       :encrypted_password,
       :picture_cache,
       :remove_picture,
+      :tag_list,
       trainer_attributes: [
         :id,
         :license,
         :experience,
         :belongs,
-        :user_id
+        :user_id,
+      #   :tag_list,
+      # # ↑トレーナータグ
       ]
     )
   end
-
 
   def set_user
     @user = User.find(params[:id])

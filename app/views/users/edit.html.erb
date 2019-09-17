@@ -28,6 +28,10 @@
                 <span>経験年数<%= f.text_field :experience, autofocus: true, autocomplete: "experience",class:"blank-content"  %></span><br />
                 <span>所属先<%= f.text_field :belongs, autofocus: true, autocomplete: "belongs",class:"blank-content"  %></span><br />
               <% end %>
+                <%# <span>得意とする指導内容<%= f.text_field :tag_list, value: @user.tag_list.join(','), class: "blank-content", placeholder: '例：腰痛予防、下半身強化等  *複数ある場合はカンマ（,)で区切ってください' %>
+              <% unless @user.trainer.blank? %>
+                <span>得意とする指導内容 *複数ある場合は、カンマ（,）で区切ってください<%= text_field_tag 'user[tag_list]', @user.tag_list.join('、'), :class => "blank-content" %></span>
+              <% end %>
               </p>
               <h3 class="text-center">自己紹介</h3>
               <div class="user-card-content2">

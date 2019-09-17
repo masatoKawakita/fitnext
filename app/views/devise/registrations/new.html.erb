@@ -18,7 +18,7 @@
               <%= f.text_field :name, autofocus: true, placeholder: '山田 太郎',class:'fadeIn second session-input', id: "input"  %>
             </div>
             <div>
-              <%= f.date_field :birthday, autofocus: true, class:'fadeIn second session-input', id: "input" %>
+              <%= f.date_field :birthday, value: Time.now.strftime("%Y-%m-%d"), autofocus: true, class:'fadeIn second session-input', id: "input" %>
             </div>
             <div>
               <%= f.label :男 %>
