@@ -13,7 +13,7 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
       @users = @keyword.result
     else
       @keyword = User.ransack(params[:q])
-      @users = @keyword.result #検索の結果を受け取る。
+      @users = @keyword.result
     end
     if params[:tag_name]
       @users = @users.tagged_with("#{params[:tag_name]}")
