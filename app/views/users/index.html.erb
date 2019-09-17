@@ -4,6 +4,12 @@
 
 <div class="trainer-index-mask-container">
 </div>
+
+<%= search_form_for(@keyword, method: :get) do } |f| %>
+  <%= f.label :name_cont_any %><br>
+  <%= f.submit 'トレーナーを検索する' %>
+<% end %>
+
   <section class="index-section d-flex align-items-start">
 		<div class="col-md-12">
     	<div class="card profile-card-3">

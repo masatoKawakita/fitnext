@@ -7,10 +7,17 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
     @users = User.where(id: @trainer_ids)
     @keyword = User.ransack(params[:q]) #:q(query)は検索窓に入力された値をパラメータで取得
     @users = @keyword.result
+    if params[:q] != nil
+      params[:q]['name_cont_any'] = params[:q]['name_cont_any'].split(/[\p{blank}\s]+/)
+      @keyword = User.ransack(params[:q])
+      @users = @keyword.result
+    else
+      @keyword = User.ransack(params[:q])
+      @users = @keyword.result #検索の結果を受け取る。
+    end
     if params[:tag_name]
       @users = @users.tagged_with("#{params[:tag_name]}")
     end
-    
     # @users = User.all
   end
 
