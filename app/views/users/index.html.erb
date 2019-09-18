@@ -28,7 +28,9 @@
             <%= search_form_for @user_search do |f| %>
               <%= f.label :name_cont, "トレーナー検索"%><br />
               <%= f.search_field :name_cont, class: "form-control", placeholder: "氏名で検索する" %>
-              <%= f.submit "検索" %>
+              <%= f.label :tags_name, "指導分野検索"%><br />
+              <%= f.search_field :tags_name, class: "form-control", placeholder: "指導分野で検索する" %>
+              <%= f.submit "検索", :class => 'col-md-12 mt-10'  %>
             <% end %>
           </div>
     </div>

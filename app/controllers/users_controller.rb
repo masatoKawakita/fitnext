@@ -5,8 +5,13 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
   def index
     @trainer_ids = Trainer.pluck(:user_id)
     @users = User.where(id: @trainer_ids)
+
     @user_search = @users.ransack(params[:q])
     @users = @user_search.result
+
+    @tags = ActsAsTaggableOn::Tag.all
+    @tag_search = @tags.ransack(params[:q])
+    @tags = @tag_search.result
     if params[:tag_name]
       @users = @users.tagged_with("#{params[:tag_name]}")
     end
