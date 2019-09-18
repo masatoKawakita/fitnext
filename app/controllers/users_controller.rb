@@ -5,20 +5,11 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
   def index
     @trainer_ids = Trainer.pluck(:user_id)
     @users = User.where(id: @trainer_ids)
-    @keyword = User.ransack(params[:q]) #:q(query)は検索窓に入力された値をパラメータで取得
-    @users = @keyword.result
-    if params[:q] != nil
-      params[:q]['name_cont_any'] = params[:q]['name_cont_any'].split(/[\p{blank}\s]+/)
-      @keyword = User.ransack(params[:q])
-      @users = @keyword.result
-    else
-      @keyword = User.ransack(params[:q])
-      @users = @keyword.result
-    end
+    @user_search = @users.ransack(params[:q])
+    @users = @user_search.result
     if params[:tag_name]
       @users = @users.tagged_with("#{params[:tag_name]}")
     end
-    # @users = User.all
   end
 
   def show
