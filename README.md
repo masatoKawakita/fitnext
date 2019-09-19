@@ -23,8 +23,12 @@ Rails 5.2.3
 - [ ] トレーナー評価機能
   - [ ] ５項目による評価
   - [ ] 文章による評価
+- [ ] トレーナータグ付け機能（得意とする指導分野をタグとして登録できる）
+- [ ] トレーナー検索機能
+  - [ ] 氏名による検索
+  - [ ] 指導分野（タグ）による検索
 - [ ] 管理者権限
- 
+
 ## 要件定義書・機能一覧
 https://docs.google.com/document/d/193T2hf8LcGjoUlHihvit2VoKYqvlYT_ni8UH3wDECB4/edit?usp=sharing
 
