@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 # protect_from_forgery
 before_action :set_user, only: [:edit, :update, :destroy] #MEMO: :show はユーザーがトレーナー詳細を確認するために外している
-before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create] #MEMO:ログイン後 トレーナー閲覧のみ可能
+before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create] #MEMO:ログイン外 トレーナー閲覧のみ可能
   def index
     @trainer_ids = Trainer.pluck(:user_id)
     @users = User.where(id: @trainer_ids)
@@ -10,11 +10,16 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
     @users = @user_search.result
     @tags = ActsAsTaggableOn::Tag.all
     @tag_search = @tags.ransack(params[:q])
-    @tags = @tag_search.result  # MEMO:この時点で結果を絞り込む  現状：全てのタグを検出
+
+    @tags = @tag_search.result
     if params[:tag_name]
       @users = @users.tagged_with("#{params[:tag_name]}")
     end
   end
+
+  # def tag_cloud
+  #   @tags = User.tag_counts_on(:tags)
+  # end
 
   def show
     if Trainer.find_by(user_id: current_user.id).present?

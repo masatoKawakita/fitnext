@@ -32,6 +32,11 @@
               <%= f.search_field :tags_name_cont_any, class: "form-control", placeholder: "指導分野で検索する" %>
               <%= f.submit "検索", :class => 'col-md-12 mt-10'  %>
             <% end %>
+            <h3>指導分野一覧</h3>
+            <% @tags.each do |tag| %>
+             <%# <% @user.tag_list.each do |tag| %>
+            <span class="badge badge-success trainer-tag"><%= link_to tag, users_path(tag_name: tag.name) %></span>
+            <% end %>
           </div>
     </div>
   </section>
