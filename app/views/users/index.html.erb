@@ -23,19 +23,20 @@
           <%# <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div> %>
         </div>
       </div>
-      <h1 class="mt-3 w-100 float-left text-center"><strong>FitNextトレーナー一覧</strong></h1>
+      <h1 class="mt-3 w-100 float-left text-center"><strong>トレーナー一覧</strong></h1>
           <div class ="col-md-12 mt-10">
             <%= search_form_for @user_search do |f| %>
               <%= f.label :name_cont, "トレーナー検索"%><br />
               <%= f.search_field :name_cont, class: "form-control", placeholder: "氏名で検索する" %>
               <%= f.label :tags_name_cont_any, "指導分野検索"%><br />
               <%= f.search_field :tags_name_cont_any, class: "form-control", placeholder: "指導分野で検索する" %>
-              <%= f.submit "検索", :class => 'col-md-12 mt-10'  %>
+              <%= f.submit "検索", :class => 'trainer_search_box text-center'  %>
             <% end %>
-            <h3>指導分野一覧</h3>
+          </div>
+          <h3 class="text-left">指導分野から選ぶ</h3>
+          <div class ="col-md-12 mt-10 trainer-tag-container">
             <% @tags.each do |tag| %>
-             <%# <% @user.tag_list.each do |tag| %>
-            <span class="badge badge-success trainer-tag"><%= link_to tag, users_path(tag_name: tag.name) %></span>
+              <span class="badge badge-success trainer-tag"><%= link_to tag, users_path(tag_name: tag.name) %></span>
             <% end %>
           </div>
     </div>
@@ -78,8 +79,3 @@
           </div>
   <% end %>
   </section>
-
-<%# <% @users.tag_list.each do |tag| %>
-<%# <%= link_to tag, users_path(tag_name: tag), class:"btn btn-primary" %>
-<%# <% end %>
-<%# FIXME:タグをクリックすると全てのタグが表示される %>

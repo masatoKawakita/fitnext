@@ -204,5 +204,20 @@
   background: -moz-linear-gradient(top, #FFC778);
   background: -webkit-linear-gradient(top, #FFC778);
   background: linear-gradient(to bottom, #FFC778, #FFF);
+  padding: 10px 10px;
+  font-size: 15px;
 }
 
+.trainer_search_box{
+  width: 80% !important;
+  display: flex !important;
+  margin: 15px auto !important;
+  justify-content: center;
+}
+
+.trainer-tag-container{
+  background-color: antiquewhite;;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  box-shadow: 2px 2px 4px gray;
+}
