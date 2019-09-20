@@ -8,10 +8,9 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
 
     @user_search = @users.ransack(params[:q])
     @users = @user_search.result
-
     @tags = ActsAsTaggableOn::Tag.all
     @tag_search = @tags.ransack(params[:q])
-    @tags = @tag_search.result
+    @tags = @tag_search.result  # MEMO:この時点で結果を絞り込む  現状：全てのタグを検出
     if params[:tag_name]
       @users = @users.tagged_with("#{params[:tag_name]}")
     end
