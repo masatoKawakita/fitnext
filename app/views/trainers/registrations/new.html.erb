@@ -47,7 +47,7 @@
                 <%= f.text_field :belongs, autofocus: true, autocomplete: "belongs", placeholder: '所属先',class:'fadeIn third session-input' %>
               </div>
             <% end %>
-            <div>
+            <div class="session-input__div">
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> 文字以上)</em>
             <% end %><br />
