@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+// メニューバーを画面サイズに応じて変更（mq-up:以上、mq-down:以下)
 @import "./_layout";
 
 .navbar-nav > a {
