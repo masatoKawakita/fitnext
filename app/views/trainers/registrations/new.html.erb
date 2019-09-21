@@ -16,10 +16,10 @@
 
           <!-- Form -->
           <form>
-            <div>
+          <div class="session-input__div">
               <%= f.text_field :name, autofocus: true, placeholder: '山田 太郎',class:'fadeIn second session-input'  %>
             </div>
-            <div>
+            <div class="session-input__div">
               <%= f.date_field :birthday, value: Time.now.strftime("%Y-%m-%d"), autofocus: true, class:'fadeIn second session-input' %>
             </div>
             <div>
@@ -30,20 +30,20 @@
               <%= f.label :その他 %>
               <%= f.radio_button :sex, :その他,class:'fadeIn second session-input' %>
             </div>
-            <div>
+            <div class="session-input__div">
               <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス',class:'fadeIn second session-input' %>
             </div>
-            <div>
+            <div class="session-input__div">
               <%= f.telephone_field :tel, autofocus: true, autocomplete: "tel", placeholder: '電話番号',class:'fadeIn second session-input' %>
             </div>
             <%= f.fields_for :trainer do |f| %>
-              <div>
+            <div class="session-input__div">
                 <%= f.text_field :license, autofocus: true, autocomplete: "license",placeholder: '資格' ,class:'fadeIn third session-input' %>
               </div>
-              <div>
+              <div class="session-input__div">
                 <%= f.text_field :experience, autofocus: true, placeholder: '指導経験年数', autocomplete: "experience",class:'fadeIn third session-input' %>年
               </div>
-              <div>
+              <div class="session-input__div">
                 <%= f.text_field :belongs, autofocus: true, autocomplete: "belongs", placeholder: '所属先',class:'fadeIn third session-input' %>
               </div>
             <% end %>
@@ -53,7 +53,7 @@
             <% end %><br />
             <%= f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード',class:'fadeIn third session-input'%>
             </div>
-            <div>
+            <div class="session-input__div">
             <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'パスワード(確認用)',class:'fadeIn third session-input' %>
             </div>
             <div class="fadeIn fourth">
