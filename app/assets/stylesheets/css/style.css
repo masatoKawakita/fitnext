@@ -349,10 +349,10 @@ h1.logo {
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.0);
 }
 
-#header2{
-  background-image: url(https://fitnext.herokuapp.com/homes/show/homes.show.sample.png);
+/* #header2{
+  background-image: url(https://fitnext.herokuapp.com/homes.show.sample.png);
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.0);
-}
+} */
 
 #services {
   background:white;
