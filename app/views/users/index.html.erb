@@ -50,7 +50,9 @@
               <div class="card profile-card-5">
                 <div class="card-img-block">
                   <% if user.picture_url %>
-                  <%= image_tag user.picture.url, class:"card-img-top picture_field img", alt:"Card image cap"%>
+                    <%= image_tag user.picture.url, class:"card-img-top picture_field img", alt:"Card image cap"%>
+                  <% else %>
+                    <%= image_tag 'no_avatar.png' %>
                   <% end %>
                 </div>
                   <div class="card-body pt-0">

@@ -85,8 +85,6 @@ private
         :experience,
         :belongs,
         :user_id,
-      #   :tag_list,
-      # # ↑トレーナータグ
       ]
     )
   end

@@ -348,6 +348,10 @@ h1.logo {
   background-image: url(https://fitnext.herokuapp.com/FitNext-logo.png);
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.0);
 }
+
+#header2{
+  background-image: url(https://fitnext.herokuapp.com/homes.show.sample.png);
+}
 #services {
   background:white;
 }

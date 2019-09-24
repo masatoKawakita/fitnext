@@ -9,11 +9,15 @@
         <section class="user-card col-md-12">
           <%# <img class="user-card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt=""> %>
           <div class="user-card-img">
+            <img id="avatar_picture_prev" src="#" class='hidden' />
             <% if current_user.persisted? && current_user.picture? %>
               <%= image_tag current_user.picture.to_s %>
               <small><%= f.check_box :remove_picture %> 画像を削除</small>
+            <% else %>
+              <%= image_tag 'no_avatar.png', class: 'avatar_present_picture' %>
+              <%= f.hidden_field :picture_cache %>
             <% end %>
-            <%= f.file_field :picture %>
+            <%= f.file_field :picture, id: 'post_picture' %>
           </div>
             <div class="user-card-content">
               <h1 class="user-card-title"><small><%= f.label :氏名 %></small><%= f.text_field :name, autofocus: true, autocomplete: "name" %></h1>
