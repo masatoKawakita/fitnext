@@ -19,4 +19,6 @@ Rails.application.routes.draw do
     resources :trainer_evaluations
   end
   resources :trainer_evaluations
+  resources :messages, :only => [:create]
+  resources :rooms, :only => [:create, :show, :index]
 end
