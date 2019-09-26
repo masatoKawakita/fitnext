@@ -54,6 +54,8 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
       else
         @room = Room.new
         @entry = Entry.new
+      end
+    end
   end
 
   def edit
