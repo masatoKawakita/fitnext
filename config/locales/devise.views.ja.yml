@@ -7,8 +7,17 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+        name: "氏名"
+        birthday: "生年月日"
+        sex: "性別"
+        tel: "電話番号"
+      trainer:
+        license: "資格"
+        experience: "指導経験"
+        belongs: "所属"
     models:
       user: "ユーザー"
+      trainer: "トレーナー"
   devise:
     confirmations:
       new:

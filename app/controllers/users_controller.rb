@@ -36,27 +36,27 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
       @trainer = Trainer.find_by(user_id: @user.id)
     end
 
+    @user = User.find_by(id: params[:id])
+    @trainer = Trainer.find_by(user_id: @user.id)
+    @currentUserEntry=Entry.where(user_id: current_user.id)
+    @userEntry=Entry.where(user_id: @user.id)
     if @user.id == current_user.id
-      @user = User.find_by(id: params[:id])
-      @trainer = Trainer.find_by(user_id: @user.id)
-      @currentUserEntry=Entry.where(user_id: current_user.id)
-      @userEntry=Entry.where(user_id: @user.id)
     else
-      @currentUserEntry.each do |cu|
-        @userEntry.each do |u|
-          if cu.room_id == u.room_id then
-            @isRoom = true
-            @roomId = cu.room_id
-          end
+      @userEntry.each do |u|
+        @currentUserEntry.each do |cu|
+        if cu.room_id == u.room_id then
+          @isRoom = true
+          @roomId = @user.room_id
         end
       end
-      if @isRoom
-      else
-        @room = Room.new
-        @entry = Entry.new
-      end
+    end
+    if @isRoom
+    else
+      @room = Room.new
+      @entry = Entry.new
     end
   end
+end
 
   def edit
     # if current_user != @user

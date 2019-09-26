@@ -1,0 +1,48 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class ="row">
+        <section class="user-card col-md-12">
+          <h4 class="text-center">ご相談・日程調整</h4>
+          <h5 class="text-center">トレーナーさんとのやり取りを通じて、日時や指導に対する要望をお伝えください</h5>
+          <div>
+            <% @entries.each do |e| %>
+              <h5><strong><%= e.user.name%>さん</a></strong></h5>
+                <% if e.user.picture_url %>
+                 <%= image_tag e.user.picture.url %>
+                <% else %>
+                 <%= image_tag 'no_avatar.png' %>
+               <% end %>
+            <% end %>
+          </div>
+          <hr>
+          <% if @messages.present? %>
+            <% @messages.each do |m| %>
+              <strong><%= m.content %></strong>
+              <small>by <strong><%= m.user.name %>さん</strong></small>
+              <% if m.user.picture_url %>
+                <%= image_tag m.user.picture.url %>
+              <% else %>
+                <%= image_tag 'no_avatar.png' %>
+              <% end %>
+              <hr>
+            <% end %>
+          <% else %>
+            <h3 class="text-center">メッセージはまだありません</h3>
+          <% end %>
+
+          <%= form_for @message do |f| %>
+            <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+            <%= f.hidden_field :room_id, :value => @room.id %>
+            <br>
+            <%= f.submit "投稿する" %>
+          <% end %>
+          <a href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1567423278&rver=7.1.6819.0&wp=MBI_SSL&wreply=https%3A%2F%2Flw.skype.com%2Flogin%2Foauth%2Fproxy%3Fclient_id%3D572381%26redirect_uri%3Dhttps%253A%252F%252Fweb.skype.com%252FAuth%252FPostHandler%26state%3D2383ec72-933d-42d4-b176-dfc30bc9400b%26site_name%3Dlw.skype.com&lc=1033&id=293290&mkt=ja-JP&psi=skype&lw=1&cobrandid=2befc4b5-19e3-46e8-8347-77317a16a5a5&client_flight=ReservedFlight33%2CReservedFlight67" target="_blank">指導を受ける</br></a>
+          <%# <%= link_to 'トレーナー詳細ページ', user_path(user), class:"btn btn-primary" FIXME:詳細ページに推移 %>
+          <%= link_to "ユーザー一覧に戻る", users_path, class:"btn btn-primary" %>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
