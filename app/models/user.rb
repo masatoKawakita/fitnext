@@ -14,5 +14,8 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :trainer
   has_many :trainer_evaluations, dependent: :destroy
 
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
+
   acts_as_taggable
 end
