@@ -1,0 +1,38 @@
+.message-card img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-block;
+}
+
+.message-card {
+  margin: 30px auto;
+  // width: 350px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px #ccc;
+  top:80px;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.room-message{
+  top:100px;
+}
+
+.skype-link1{
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+
+.skype-link2{
+  font-size: 2rem;
+}
+
+.btn-gradient-radius-user-button{
+  background-color: orange !important;
+  width: 80% !important;
+}
