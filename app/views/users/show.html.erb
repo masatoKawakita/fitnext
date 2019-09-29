@@ -5,7 +5,7 @@
         <section class="user-card col-md-12">
           <%# <img class="user-card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt=""> %>
           <div class="user-card-img">
-            <% if @user.picture_url %>
+            <% if @user.picture %>
               <%= image_tag @user.picture.url %>
             <% else %>
               <%= image_tag 'no_avatar.png' %>

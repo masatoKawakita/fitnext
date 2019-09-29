@@ -49,7 +49,7 @@ class User < ApplicationRecord
       end
       targets.length > 0
     end
-    return Room.find_by(id: entries.first.room_id) if self.entries&.length > 0
+    return Room.find_by(id: self.entries.first.room_id) if self.entries&.length > 0
   end
 
   def get_current_DM_room_id
@@ -61,7 +61,7 @@ class User < ApplicationRecord
       targets.length > 0
     end
     return if self.entries&.length == 0
-    room = Room.find_by(id: entries.first.room_id)
+    room = Room.find_by(id: self.entries.first.room_id)
     return room.id if room.entries.length == 2
   end
 
@@ -74,7 +74,7 @@ class User < ApplicationRecord
       targets.length > 0
     end
     return if self.entries&.length == 0
-    room = Room.find_by(id: entries.first.room_id)
+    room = Room.find_by(id: self.entries.first.room_id)
     return room if room.entries.length == 2
   end
 end
