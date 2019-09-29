@@ -42,18 +42,14 @@
     </div>
   </section>
 
-  <section class="index-section2">
-  <% @users.each do |user| %>
+    <section class="index-section2">
+    <% @users.each do |user| %>
         <div class="container">
           <div class="row">
             <div class="col-md-12 mt-10">
               <div class="card profile-card-5">
                 <div class="card-img-block">
-                  <% if user.picture_url %>
-                    <%= image_tag user.picture.url, class:"card-img-top picture_field img", alt:"Card image cap"%>
-                  <% else %>
-                    <%= image_tag 'no_avatar.png' %>
-                  <% end %>
+                  <%= image_tag user.picture&.url, class:"card-img-top picture_field img", alt:"Card image cap"%>
                 </div>
                   <div class="card-body pt-0">
                     <h5 class="card-title trainer-card-title"><%= user.name %>トレーナー</h5>
@@ -79,5 +75,5 @@
               </div>
             </div>
           </div>
-  <% end %>
+    <% end %>
   </section>

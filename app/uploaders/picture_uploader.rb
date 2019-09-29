@@ -26,6 +26,10 @@ class PictureUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+  def default_url
+    "/no_avatar.png"
+  end
+
   # 保存するファイルの命名規則
   def filename
     "something.jpg" if original_filename

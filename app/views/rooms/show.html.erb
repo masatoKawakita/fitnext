@@ -16,11 +16,7 @@
           <div class="message-card-img">
             <% @entries.each do |e| %>
               <h5><strong><%= e.user.name%>さん</strong></h5>
-                <% if e.user.picture_url %>
-                  <%= image_tag e.user.picture.url %>
-                <% else %>
-                  <%= image_tag 'no_avatar.png'%>
-                <% end %>
+                <%= image_tag e.user.picture&.url %>
             <% end %>
           </div>
           <hr class="message-card-img">
@@ -28,11 +24,7 @@
             <% @messages.each do |m| %>
               <strong><%= m.content %></strong>
               <small>by <strong><%= m.user.name %>さん</strong></small>
-              <% if m.user.picture_url %>
-                <%= image_tag m.user.picture.url %>
-              <% else %>
-                <%= image_tag 'no_avatar.png' %>
-              <% end %>
+                <%= image_tag m.user.picture&.url %>
               <hr>
             <% end %>
           <% else %>
