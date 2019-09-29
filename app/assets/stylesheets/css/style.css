@@ -156,13 +156,14 @@ header.top-header {
   width: 100%;
 }
 .shows {
- background: rgba(43, 62, 81, 0.77);
- transition: all .6s;
+ /* background: rgba(43, 62, 81, 0.7); */
+  background: rgba(245, 245, 245, 0.9);
+  transition: all .6s;
 }
 .shows .navbar-default {
-  /* background-color: #f8f8f8; */
-  /* border-color: #e7e7e7; */
-  margin-bottom: 10px;
+  /* background-color: #f8f8f8;
+  border-color: #e7e7e7; */
+  margin-bottom: 15px;
   transition: all .6s;
 }
 
@@ -385,7 +386,7 @@ h1.logo {
     display: table;
     text-align: center;
     vertical-align: middle;
-    padding-top: 27%;
+    padding-top: 33%;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -415,7 +416,7 @@ h1.logo {
   transition: all .2s;
 }
 .recent-work:hover {
-    background-size: 200%;
+    background-size: 130%;
     background-position: center;
 }
 .recent-work:hover:before, .recent-work:hover span {

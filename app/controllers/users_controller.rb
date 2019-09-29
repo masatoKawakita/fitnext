@@ -38,25 +38,9 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
 
     @user = User.find_by(id: params[:id])
     @trainer = Trainer.find_by(user_id: @user.id)
-    @currentUserEntry=Entry.where(user_id: current_user.id)
-    @userEntry=Entry.where(user_id: @user.id)
-    if @user.id == current_user.id
-    else
-      @userEntry.each do |u|
-        @currentUserEntry.each do |cu|
-        if cu.room_id == u.room_id then
-          @isRoom = true
-          @roomId = @user.room_id
-        end
-      end
-    end
-    if @isRoom
-    else
-      @room = Room.new
-      @entry = Entry.new
-    end
+    @room = Room.new
+    @entry = Entry.new
   end
-end
 
   def edit
     # if current_user != @user

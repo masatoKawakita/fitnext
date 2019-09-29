@@ -18,4 +18,63 @@ class User < ApplicationRecord
   has_many :entries, dependent: :destroy
 
   acts_as_taggable
+
+  class << self
+    def current_user=(user)
+      Thread.current[:current_user] = user
+    end
+
+    def current_user
+      Thread.current[:current_user]
+    end
+  end
+
+
+  def get_current_room_id
+    return if (!User.current_user)
+    entries = self.entries.select do |entry| 
+      targets = User.current_user.entries.select do |current_entry| 
+        entry.room_id == current_entry.room_id
+      end
+      targets.length > 0
+    end
+    return entries.first.room_id if self.entries&.length > 0
+  end
+
+  def get_current_room
+    return if (!User.current_user)
+    entries = self.entries.select do |entry| 
+      targets = User.current_user.entries.select do |current_entry| 
+        entry.room_id == current_entry.room_id
+      end
+      targets.length > 0
+    end
+    return Room.find_by(id: entries.first.room_id) if self.entries&.length > 0
+  end
+
+  def get_current_DM_room_id
+    return if (!User.current_user)
+    entries = self.entries.select do |entry| 
+      targets = User.current_user.entries.select do |current_entry| 
+        entry.room_id == current_entry.room_id
+      end
+      targets.length > 0
+    end
+    return if self.entries&.length == 0
+    room = Room.find_by(id: entries.first.room_id)
+    return room.id if room.entries.length == 2
+  end
+
+  def get_current_DM_room
+    return if (!User.current_user)
+    entries = self.entries.select do |entry| 
+      targets = User.current_user.entries.select do |current_entry| 
+        entry.room_id == current_entry.room_id
+      end
+      targets.length > 0
+    end
+    return if self.entries&.length == 0
+    room = Room.find_by(id: entries.first.room_id)
+    return room if room.entries.length == 2
+  end
 end

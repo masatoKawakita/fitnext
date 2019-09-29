@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
+  before_action :set_current_user
+
   # before_action :authenticate_user! #TODO:ログイン・会員登録不可のため
 
   def after_sign_in_path_for(resource)
@@ -19,9 +21,13 @@ def set_locale
 end
 
 private
-  def sign_in_required
-    redirect_to homes_path unless user_signed_in?
-  end
+def set_current_user
+  User.current_user = current_user
+end
+
+def sign_in_required
+  redirect_to homes_path unless user_signed_in?
+end
 
 protected
   def configure_permitted_parameters
