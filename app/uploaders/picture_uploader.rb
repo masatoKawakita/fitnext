@@ -10,7 +10,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{SecureRandom.uuid}"
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
     # デフォルト画像は700x700に収まるようリサイズ
@@ -30,13 +30,11 @@ class PictureUploader < CarrierWave::Uploader::Base
     "/no_avatar.png"
   end
 
-  # 保存するファイルの命名規則
   def filename
-    "something.jpg" if original_filename
+    "#{secure_token}.#{file.extension}" if original_filename.present?
   end
 
   protected
-  # 一意となるトークンを作成
   def secure_token
     var = :"@#{mounted_as}_secure_token"
     model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
