@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe User, type: :system do
   # background do
   # @user = User.create!(name: 'testさん', birthday:'1990-02-21', sex:'男', email:'testtesttest@sample.com', tel:'000-000-1111', password:'testtesttest',password_confirmation:'testtesttest',admin:'false' )
-  # # let(:user) { create(:user) }
+  # let(:user) { create(:user) }
   # # let(:second_user) { create(:second_user) }
   # end
 
@@ -14,7 +14,7 @@ RSpec.describe User, type: :system do
       visit new_user_registration_path
       fill_in 'user[name]', with: 'hogehoge'
       fill_in 'user[birthday]', with: '1990-01-11'
-      fill_in 'user[sex]', with: '男'
+      fill_in 'user[sex]', with: '1'
       fill_in 'user[email]', with: 'hogehoge@mail.com'
       fill_in 'user[tel]', with: 'hogehoge'
       fill_in 'user[password]', with: 'hogehoge'
