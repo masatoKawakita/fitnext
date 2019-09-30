@@ -129,8 +129,8 @@ a:hover {
 }
 
 
-h1, h2, h3, h4, h5, h6{   
-  margin: 0 0 15px 0; 
+h1, h2, h3, h4, h5, h6{
+  margin: 0 0 15px 0;
   color: #3A4F52;
   font-family: 'Raleway';
 }
@@ -148,7 +148,6 @@ h1, h2, h3, h4, h5, h6{
     border: 1px solid white;
     color: white;
     background: transparent;
-    
 }
 .btn.btn-o-white:hover {
     background: white !important;
@@ -383,6 +382,8 @@ h1.logo {
   padding-top: 60px;
   padding-bottom: 0px;
   /* height: 939px; */
+  background-image: -webkit-radial-gradient(27% 185%, #F9F6F1 0%, #D7D0C5 100%);
+  background-image: radial-gradient(27% 185%, #F9F6F1 0%, #D7D0C5 100%);
 }
 .parallax{
   padding: 80px 0;
@@ -404,7 +405,7 @@ h1.logo {
 }
 
 #services {
-  background:white;
+  /* background:white; */
 }
 #parallax {
   /* background-image: url(../images/blue_mac2.jpg); */
@@ -505,6 +506,8 @@ h1.logo {
 /*////////////////////////////////////////////////////////////////////////
 //  About us
 ///////////////////////////////////////////////////////////////////////*/
+
+
 .portfolio-sec ,.services-sec ,.blog-sec , .testimonial-sec{
   margin-top: 60px;
 }
@@ -513,8 +516,11 @@ h1.logo {
 }
 
 .about-us {
-  background: white;
+  /* background: white; */
   padding: 92px 0 80px;
+  background-image: -webkit-linear-gradient(#DEDFE3 2%, #AEB3B9 95%), -webkit-radial-gradient(33% 100%, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: linear-gradient(#DEDFE3 2%, #AEB3B9 95%), radial-gradient(33% 100%, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-blend-mode: screen;
 }
 
 
@@ -525,6 +531,7 @@ h1.logo {
       /* color: #ffffff; */
     }
 }
+
 
 .aboutus-item {
   margin-bottom: 15px;
@@ -553,6 +560,16 @@ h4.aboutus-title {
   font-weight: bold;
 }
 
+
+h4.howtouse-title {
+  font-family: 'Raleway', sans-serif;
+  margin-top: 23px;
+  font-size: 32px;
+  color: rgb(106, 106, 106);
+  font-weight: 900;
+  font-weight: bold;
+}
+
 p.aboutus-desc {
   font-size: 16px;
   line-height: 29px;
@@ -561,7 +578,12 @@ p.aboutus-desc {
   font-weight: 900;
 }
 
-
+p.howtouse-desc {
+  font-size: 16px;
+  line-height: 29px;
+  letter-spacing: 0.4px;
+  color: rgb(106, 106, 106);
+}
 
 /*////////////////////////////////////////////////////////////////////////
 //  Call to Action
