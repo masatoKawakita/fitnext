@@ -1938,6 +1938,7 @@ if (typeof jQuery === 'undefined') {
     }
 
     active.trigger('activate.bs.scrollspy')
+
   }
 
   ScrollSpy.prototype.clear = function () {
@@ -2049,6 +2050,7 @@ if (typeof jQuery === 'undefined') {
         relatedTarget: $previous[0]
       })
     })
+    
   }
 
   Tab.prototype.activate = function (element, container, callback) {
@@ -2088,6 +2090,7 @@ if (typeof jQuery === 'undefined') {
       }
 
       callback && callback()
+
     }
 
     $active.length && transition ?
@@ -2097,6 +2100,8 @@ if (typeof jQuery === 'undefined') {
       next()
 
     $active.removeClass('in')
+
+
   }
 
 

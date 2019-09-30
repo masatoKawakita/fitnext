@@ -189,8 +189,7 @@ li{
 /*////////////////////////////////////////////////////////////////////////
 //  02 - Header
 ///////////////////////////////////////////////////////////////////////*/
- 
-    
+
 
 header.top-header {
   position: fixed;
@@ -211,7 +210,7 @@ header.top-header {
 
 .nav a{
   color: black;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 .nav a:hover{
@@ -233,8 +232,8 @@ h1.logo {
   display: inline-flex;
   font-family: inherit;
 }
-#header{  
-  position: relative;     
+#header{
+  position: relative;
   text-align: center;
   padding: 0 !important;
 }
@@ -253,8 +252,8 @@ h1.logo {
   -o-transition: all .5s;
   -ms-transition: all .5s;
   -moz-transition: all .5s;
-  -webkit-transition: all .5s;  
-  transition: all .5s;    
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 #header .top.solid {
     background: #475B6F;
@@ -283,7 +282,7 @@ h1.logo {
 }
 
 #header .slogan{
-  font-size: 4em;
+  font-size: 5em;
   margin-bottom: 15px;
   line-height: 1em;
   font-family: 'Raleway', sans-serif;
@@ -294,10 +293,12 @@ h1.logo {
   background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-top: 400px;
+  /* MEMO:上記記述必要かpadding-bottom */
 }
 
 #header .secondary-slogan{
-  font-size: 1.6em;
+  font-size: 2.6em;
   color: inherit;
   line-height: 1em;
   font-family: 'Raleway', sans-serif;
@@ -305,6 +306,8 @@ h1.logo {
   background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-bottom: 390px;
+  /* MEMO:上記記述必要かpadding-bottom */
 }
 
 #header > .bottom {
@@ -377,6 +380,9 @@ h1.logo {
   -o-background-size:cover;
   overflow:hidden;
   padding: 60px 0;
+  padding-top: 60px;
+  padding-bottom: 0px;
+  /* height: 939px; */
 }
 .parallax{
   padding: 80px 0;
@@ -542,7 +548,7 @@ h4.aboutus-title {
   font-family: 'Raleway', sans-serif;
   margin-top: 23px;
   font-weight: 300;
-  font-size: 22px;
+  font-size: 35px;
   color: #DA8E00;
   font-weight: bold;
 }
@@ -552,6 +558,7 @@ p.aboutus-desc {
   line-height: 29px;
   letter-spacing: 0.4px;
   color: rgb(106, 106, 106);
+  font-weight: 900;
 }
 
 
@@ -581,7 +588,19 @@ h3.call-action.pull-left {
 #blog .date {
     margin-bottom: 15px;
     font-style: italic;
+    font-weight: 900;
+    position: relative;
+    padding: 0.25em 0;
 }
+
+#blog .date:after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: -webkit-linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+  background: linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+}
+
 
 
 /*////////////////////////////////////////////////////////////////////////

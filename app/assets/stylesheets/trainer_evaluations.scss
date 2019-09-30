@@ -25,11 +25,10 @@
   background-color:white !important;
   border-color:white !important;
 }
-// FIXME:評価投稿ボタン　hover時の色を変えたい
 
 .img-responsive-user{
-  width: 80%;
-  height: 80%;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -67,4 +66,8 @@
   height: 40px;
   text-align: center;
   font-size: 2rem;
+}
+
+.trainer-evaluations-font{
+  font-weight: bold;
 }
