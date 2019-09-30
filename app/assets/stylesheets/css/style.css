@@ -507,7 +507,6 @@ h1.logo {
 //  About us
 ///////////////////////////////////////////////////////////////////////*/
 
-
 .portfolio-sec ,.services-sec ,.blog-sec , .testimonial-sec{
   margin-top: 60px;
 }
@@ -529,6 +528,8 @@ h1.logo {
       background: white;
       padding: 50px 0;
       /* color: #ffffff; */
+      background-image: -webkit-linear-gradient(#DEDFE3 2%, #AEB3B9 95%), -webkit-radial-gradient(33% 100%, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+      background-image: linear-gradient(#DEDFE3 2%, #AEB3B9 95%), radial-gradient(33% 100%, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
     }
 }
 
