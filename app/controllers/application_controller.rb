@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
   #   redirect_to homes_path
   # end
 
+  def after_sign_out_path_for(resource)
+    root_path
+  end
+
 def set_locale
     I18n.locale = I18n.default_locale
 end
