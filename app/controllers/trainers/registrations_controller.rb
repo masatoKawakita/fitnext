@@ -82,6 +82,7 @@ class Trainers::RegistrationsController < Devise::RegistrationsController
   # アカウント編集後、プロフィール画面に移動する
   def after_update_path_for(resource)
     user_path(id: current_user.id)
+    # MEMO：root_path DEMODAY後、ユーザー削除をするために設定
   end
 
 
