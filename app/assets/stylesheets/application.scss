@@ -20,34 +20,6 @@
  *= require_self
  */
 
-
-// ヘッダーボタン
- .btn-border-bottom {
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  padding: 0.25em 0;
-  text-decoration: none;
-  color: #67c5ff;  
-}
-
-.btn-border-bottom:before {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 4px;
-  top:100%;
-  left: 0;
-  border-radius: 3px;
-  background: orangered;
-  transition: .2s;
-}
-
-.btn-border-bottom:hover:before {
-  top: -webkit-calc(100% - 3px);
-  top: calc(100% - 3px);
-}
-
 html{
   font-size: 62.5%;
 }

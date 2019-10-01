@@ -29,8 +29,8 @@ Text Domain: flusk
 */
 
 
-/* ///////////////////////////////////////////////////////////////////// 
-//  01 - Global 
+/* /////////////////////////////////////////////////////////////////////
+//  01 - Global
 /////////////////////////////////////////////////////////////////////*/
 
 html{
@@ -91,7 +91,7 @@ html {
 }
 
 body {
-  color: #6a6a6a; 
+  color: #6a6a6a;
   background: #f1f0f0;
 }
 
@@ -107,7 +107,7 @@ a {
   outline: none;
 }
 
-a{  
+a{
   color: #4da7ca;
   -o-transition: all .4s;
   -ms-transition: all .4s;
@@ -117,7 +117,7 @@ a{
 }
 
 a:hover {
-  color: #4290ae; 
+  color: #4290ae;
 }
 
 .logo a{
@@ -151,7 +151,7 @@ h1, h2, h3, h4, h5, h6{
 }
 .btn.btn-o-white:hover {
     background: white !important;
-    color: #6a6a6a; 
+    color: #6a6a6a;
 }
 
 .title-page {
@@ -164,7 +164,7 @@ p.main-header {
   font-weight: 500;
 }
 p.main-header:after {
-  content: " ";   
+  content: " ";
   font-size: 27px;
   font-family: 'Raleway';
   font-weight: 500;
@@ -231,6 +231,11 @@ h1.logo {
   display: inline-flex;
   font-family: inherit;
 }
+
+.logo {
+  margin: 0;
+}
+
 #header{
   position: relative;
   text-align: center;
@@ -547,7 +552,7 @@ i.aboutus-icon {
   width: 140px;
   height: 140px;
   line-height: 136px;
-  vertical-align: middle; 
+  vertical-align: middle;
   text-align: center;
   color: rgb(106, 106, 106);
 }
@@ -715,15 +720,15 @@ h2.footer-block {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #969595 !important;  
+   color: #969595 !important;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #969595 !important; 
+   color: #969595 !important;
 }
 
-:-ms-input-placeholder {  
-   color: #969595 !important;  
+:-ms-input-placeholder {
+   color: #969595 !important;
 }
 .footer-bottom {
   padding: 37px 0 30px;
