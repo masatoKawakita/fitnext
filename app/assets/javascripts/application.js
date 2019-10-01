@@ -31,19 +31,17 @@
 
 
 $(document).on("turbolinks:load", () => {
-  jQuery(document).ready(function($){
-      $(window).scroll(function() {
-      if ($(window).scrollTop() > 100 ){
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 100 ){
       $('.top-header').addClass('shows');
         } else {
         $('.top-header').removeClass('shows');
       };
-    });
-    });
-  jQuery('.scroll').on('click', function(e){
-      e.preventDefault()
-    jQuery('html, body').animate({
-        scrollTop : jQuery(this.hash).offset().top
-      }, 1500);
+  });
+  $('.scroll').on('click', function(e){
+    e.preventDefault()
+    $('html, body').animate({
+      scrollTop : jQuery(this.hash).offset().top
+    }, 1500);
   });
 });
