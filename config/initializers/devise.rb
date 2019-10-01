@@ -13,6 +13,7 @@ Devise.setup do |config|
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
   config.reset_password_within = 6.hours
   config.sign_out_via = :get
+  # MEMO:上記を変更
   config.unlock_strategy = :email
   config.maximum_attempts = 10
   config.scoped_views = true

@@ -54,9 +54,11 @@ before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :creat
   def update
     # if @user.id == current_user.id
       if @user.update(user_params)
-        redirect_to user_path(current_user.id), notice: "情報を更新しました"
+        flash[:notice] = "情報を更新しました"
+        redirect_to user_path(current_user.id)
       else
-        render "edit", alert: "更新に失敗しました"
+        flash[:alert] = "更新に失敗しました"
+        render "edit"
       end
   end
 

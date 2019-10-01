@@ -14,7 +14,7 @@ module Fitnext
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     config.assets.initialize_on_precompile = false
     #MEMO:herokuデプロイエラー時にconfig.assets.initialize_on_precompile = false追記
-
+    # Rails.application.config.assets.precompile += %w( *.eot *.woff *.ttf *.svg *.otf *.png *.jpg *.jpeg *.gif vendor.css vendor.js )
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
