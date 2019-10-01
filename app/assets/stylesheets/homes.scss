@@ -5,6 +5,11 @@
 // メニューバーを画面サイズに応じて変更（mq-up:以上、mq-down:以下)
 @import "./_layout";
 
+.hidden-in-md {
+  @include mq-down(md) {
+    display: none !important;
+  };
+}
 .navbar-nav > a {
   @include mq-up(md) {
     display: inline;
