@@ -2,7 +2,7 @@ Rails.application.configure do
 
   config.cache_classes = false
   config.eager_load = false
-  config.consider_all_requests_local = true
+  config.consider_all_requests_local = false
   # MEMO:開発時は上記をtrueに変更
 
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
