@@ -46,7 +46,6 @@ https://xd.adobe.com/view/0ee9bcb8-38c0-47b0-458d-fcfddaf57fbd-78d8/
 https://drive.google.com/file/d/1dbFFfxZ3_dKulzEkcpDS8h5fGG3d4TO7/view?usp=sharing
 
 ## テーブル定義
-https://drive.google.com/file/d/1lGH7l5Oh6PWuirqa19-cKN6UnbAfppl-/view?usp=sharing
 https://docs.google.com/spreadsheets/d/1RKPmAWuo09VjIAifspCYi6h34bgQYOxv2-tQ-fnN8a8/edit?usp=sharing
 
 
