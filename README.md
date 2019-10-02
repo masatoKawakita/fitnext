@@ -40,7 +40,7 @@ Rails 5.2.3
 https://docs.google.com/document/d/193T2hf8LcGjoUlHihvit2VoKYqvlYT_ni8UH3wDECB4/edit?usp=sharing
 
 ## 画面遷移図/ワイヤーフレーム
-https://xd.adobe.com/view/0ee9bcb8-38c0-47b0-458d-fcfddaf57fbd-78d8/grid
+https://xd.adobe.com/view/0ee9bcb8-38c0-47b0-458d-fcfddaf57fbd-78d8/
 
 ## リーンキャンパス
 https://drive.google.com/file/d/1dbFFfxZ3_dKulzEkcpDS8h5fGG3d4TO7/view?usp=sharing
