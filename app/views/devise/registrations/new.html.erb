@@ -22,11 +22,11 @@
             </div>
             <div>
               <%= f.label :男 %>
-              <%= f.radio_button :sex, :男 ,class:'fadeIn second session-input', id: "input"%>
+              <%= f.radio_button :sex, :男 ,class:'fadeIn second session-input', id: "input user_gender_male"%>
               <%= f.label :女 %>
-              <%= f.radio_button :sex, :女,class:'fadeIn second session-input', id: "input" %>
+              <%= f.radio_button :sex, :女,class:'fadeIn second session-input', id: "input user_gender_female" %>
               <%= f.label :その他 %>
-              <%= f.radio_button :sex, :その他,class:'fadeIn second session-input', id: "input" %>
+              <%= f.radio_button :sex, :その他,class:'fadeIn second session-input', id: "input user_gender_other" %>
             </div>
             <div class="session-input__div" >
               <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス',class:'fadeIn second session-input', id: "input" %>

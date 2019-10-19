@@ -13,30 +13,32 @@ RSpec.describe User, type: :system do
     it 'User新規作成' do
       visit new_user_registration_path
       fill_in 'user[name]', with: 'hogehoge'
-      fill_in 'user[birthday]', with: '1990-01-11'
-      fill_in 'user[sex]', with: '1'
+      fill_in 'user[birthday]', with: ''
+      choose 'input user_gender_male'
+      # fill_in 'user[sex]', with: '1'
       fill_in 'user[email]', with: 'hogehoge@mail.com'
       fill_in 'user[tel]', with: 'hogehoge'
       fill_in 'user[password]', with: 'hogehoge'
       fill_in 'user[password_confirmation]', with: 'hogehoge'
-      click_on '会員登録'
+      click_on '会員登録', match: :first
     end
   end
 
   describe 'Sessionログイン／ログアウトの確認' do
     it 'ログインできること' do
-      user
       visit new_user_session_path
       fill_in 'user[email]', with: 'hogehoge@mail.com'
       fill_in 'user[password]', with: 'hogehoge'
       click_on 'ログイン'
-      # expect(page).to have_content 'ログインしました。'
     end
+
     it 'ログアウトできること' do
-      user
-      visit users_path
-      click_on 'ログアウト'
-      # expect(page).to have_content 'ログアウトしました。'
+      visit new_user_session_path
+      fill_in 'user[email]', with: 'hogehoge@mail.com'
+      fill_in 'user[password]', with: 'hogehoge'
+      click_on 'ログイン'
+      # find('ログアウト').click
+      # find('.btn-border-bottom header-signout').click
     end
   end
 end
